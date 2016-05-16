@@ -98,6 +98,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\e-campus.mdf" />
+    <Content Include="App_Data\e-campus_log.ldf">
+      <DependentUpon>e-campus.mdf</DependentUpon>
+    </Content>
     <Content Include="Home\login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
