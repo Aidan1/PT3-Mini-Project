@@ -1,0 +1,253 @@
+CREATE TABLE dbo.attendance
+ (
+  attendanceID int(10) NOT NULL IDENTITY, 
+  courseID int(10) NOT NULL, 
+  sectionID int(10) NOT NULL, 
+  dateID int(10) NOT NULL, 
+  semesterID int(10) NOT NULL, 
+  CONSTRAINT PK_attendance_attendanceID PRIMARY KEY (attendanceID), 
+  CONSTRAINT attendance$attendance_ibfk_1 FOREIGN KEY (dateID) REFERENCES dbo.attendance_date (dateID), 
+ CONSTRAINT attendance$attendance_ibfk_2 FOREIGN KEY (sectionID) REFERENCES dbo.section (sectionID)
+) 
+  CREATE NONCLUSTERED INDEX dateID
+  ON dbo.attendance (dateID ASC) 
+  CREATE NONCLUSTERED INDEX sectionID
+  ON dbo.attendance (sectionID ASC) 
+ 
+
+  CREATE TABLE dbo.attendance_date
+(
+  dateID int(10) NOT NULL IDENTITY, 
+  date date NOT NULL, 
+  CONSTRAINT PK_attendance_date_dateID PRIMARY KEY (dateID)
+)  
+
+
+CREATE TABLE dbo.attendance_status
+ (
+  uID int(10) NOT NULL IDENTITY, 
+  attendanceID int(10) NOT NULL, 
+ matricNo varchar(9) NOT NULL, 
+ status smallint(1) NOT NULL, 
+ comment varchar(255) NOT NULL, 
+ CONSTRAINT PK_attendance_status_uID PRIMARY KEY (uID), 
+ CONSTRAINT attendance_status$attendance_status_ibfk_1 FOREIGN KEY (attendanceID) REFERENCES dbo.attendance (attendanceID), 
+ CONSTRAINT attendance_status$attendance_status_ibfk_2 FOREIGN KEY (attendanceID) REFERENCES dbo.attendance (attendanceID), 
+ CONSTRAINT attendance_status$attendance_status_ibfk_3 FOREIGN KEY (matricNo) REFERENCES dbo.student (matricNo)
+) 
+ CREATE NONCLUSTERED INDEX attendanceID
+ ON dbo.attendance_status (attendanceID ASC) 
+  CREATE NONCLUSTERED INDEX matricNo
+ ON dbo.attendance_status (matricNo ASC) 
+
+
+CREATE TABLE dbo.course
+ (
+  courseCode varchar(5) NOT NULL, 
+  courseID int(11) NOT NULL, 
+ courseName varchar(255) NOT NULL, 
+ shortForm varchar(255) NOT NULL, 
+ creditHours int(1) NOT NULL, 
+ CONSTRAINT PK_course_courseCode PRIMARY KEY (courseCode, courseID)
+)  CREATE NONCLUSTERED INDEX courseCode
+  ON dbo.course (courseCode ASC)    CREATE NONCLUSTERED INDEX courseID
+  ON dbo.course (courseID ASC)  
+
+SET IDENTITY_INSERT "course" ON ;
+INSERT INTO course (courseCode, courseID, courseName, shortForm, creditHours) VALUES
+('SCSB', 2103, 'Bioinformatics I', 'Bioinformatics I', 3),
+('SCSB', 3032, 'Bioinformatic Project I', 'Bioinformatic Project I', 2),
+('SCSB', 3103, 'Bioinformatics II', 'Bioinformatics II', 3),
+('SCSB', 3133, 'Computational Biology I', 'Comp Biology I', 3),
+('SCSB', 3203, 'Programming for Bioinformatics', 'Programming for Bioinformatics', 3),
+('SCSB', 3213, 'Bioinformatics Database', 'Bioinformatics Database', 3),
+('SCSB', 3223, 'Computational Biology II', 'Comp Biology II', 3),
+('SCSB', 4114, 'Industrial Training Report', 'LI Report', 4),
+('SCSB', 4118, 'Industrial Training (HW)', 'LI (HW)', 8),
+('SCSB', 4134, 'Bioinformatics Project II', 'Bioinformatics Project II', 4),
+('SCSB', 4213, 'Bioinformatics Visualization', 'Bioinformatics Visualization', 3),
+('SCSB', 4243, 'Special Topics in Bioinformatics', 'Special Topics in Bioinformatics', 3),
+('SCSB', 4313, 'Bioinformatics Modelling and Simulation', 'Bioinformatics Modelling and Simulation', 3),
+('SCSD', 1513, 'Technology & Information System', 'TIS', 3),
+('SCSD', 2523, 'Database', 'DB', 3),
+('SCSD', 2613, 'System Analysis and  Design', 'SADM', 3),
+('SCSD', 2623, 'Database Programming', 'Database Programming', 3),
+('SCSD', 3761, 'Technopreneurship Seminar', 'Technopreneurship Seminar', 1),
+('SCSI', 1013, 'Discrete Structure', 'Discrete Structure', 3),
+('SCSI', 1113, 'Computational Mathematics', 'Comp Maths', 3),
+('SCSI', 2143, 'Probability & Statistical Data Analysis', 'PSDA', 3),
+('SCSJ', 1013, 'Programming Technique I', 'PT I', 3),
+('SCSJ', 1023, 'Programming Technique II', 'PT II', 3),
+('SCSJ', 2013, 'Data Structure and Alrithm', 'Data Structure and Alrithm', 3),
+('SCSJ', 2154, 'Object-Oriented Programming', 'OOP', 4),
+('SCSJ', 2203, 'Software Engineering', 'SE', 3),
+('SCSJ', 2253, 'Requirement Engineering & Software Modelling', 'RESM', 3),
+('SCSJ', 2363, 'Software Project Management', 'Software Project Management', 3),
+('SCSJ', 3032, 'Software Engineering Project I', 'SE Project I', 2),
+('SCSJ', 3104, 'Applications Development', 'AD', 4),
+('SCSJ', 3203, 'Computer Science Theory', 'CST', 3),
+('SCSJ', 3253, 'Programming Technique III', 'PT III', 3),
+('SCSJ', 3303, 'Internet Programming', 'IP', 3),
+('SCSJ', 3323, 'Software Design & Architecture', 'SDA', 3),
+('SCSJ', 3343, 'Software Quality Assurance', 'SQA', 3),
+('SCSJ', 3403, 'Special Topics in Software Engineering', 'Special Topics in SE', 3),
+('SCSJ', 3553, 'Artificial Intelligence', 'AI', 3),
+('SCSJ', 3563, 'Computational Intelligence', 'CI', 3),
+('SCSJ', 3603, 'Knowledge-based Expert System', 'Knowledge-based Expert System', 3),
+('SCSJ', 4114, 'Industrial Training Report', 'LI Report', 4),
+('SCSJ', 4118, 'Industrial Training (HW)', 'LI (HW)', 8),
+('SCSJ', 4134, 'Software Engineering Project II', 'SE Project II', 4),
+('SCSJ', 4383, 'Software Construction', 'Software Construction', 3),
+('SCSJ', 4423, 'Real-time Software Engineering', 'Real-time SE', 3),
+('SCSJ', 4463, 'Agent-Oriented Software Engineering', 'Agent-Oriented Software Engineering', 3),
+('SCSJ', 4483, 'Web Technology', 'Web Technology', 3),
+('SCSR', 1013, 'Digital Logic', 'Digital Logic', 3),
+('SCSR', 1213, 'Network Communications', 'Net Comm', 3),
+('SCSR', 2033, 'Computer Organisation & Architecture', 'COA', 3),
+('SCSR', 2043, 'Operating Systems', 'OS', 3),
+('SCSR', 2233, 'Network', 'Network', 3),
+('SCSR', 2242, 'Computer Networks', 'Computer Networks', 3),
+('SCSR', 2941, 'Computer Networks Lab', 'Computer Networks Lab', 3),
+('SCSR', 3032, 'Computer Network & Security Project I', 'Computer Network & Security Project I', 2),
+('SCSR', 3104, 'Applications Development', 'AD', 4),
+('SCSR', 3242, 'Inter Networking Technology', 'Inter Networking Technology', 2),
+('SCSR', 3243, 'Netcentric Computing', 'Netcentric Computing', 3),
+('SCSR', 3253, 'Network Programming', 'Network Programming', 3),
+('SCSR', 3413, 'Computer Security', 'Computer Security', 3),
+('SCSR', 3443, 'Cryptography', 'Cryptography', 3),
+('SCSR', 3941, 'Inter Networking Technology Lab', 'Inter Networking Technology Lab', 1),
+('SCSR', 4114, 'Industrial Training Report', 'LI Report', 4),
+('SCSR', 4118, 'Industrial Training (HW)', 'LI (HW)', 8),
+('SCSR', 4273, 'Network Administration and Management', 'Network Administration and Management', 3),
+('SCSR', 4283, 'Network Analysis and Design Simulation', 'Network Analysis and Design Simulation', 3),
+('SCSR', 4453, 'Network Security', 'Network Security', 3),
+('SCSR', 4473, 'Security Management', 'Security Management', 3),
+('SCSR', 4483, 'Security Programming', 'Security Prog', 3),
+('SCSR', 4493, 'Computer Forensic', 'Computer Forensic', 3),
+('SCSR', 4973, 'Computer Network & Security Special Topic', 'Computer Network & Security Special Topic', 3),
+('SCSV', 1113, 'Mathematics for Computer Graphics', 'Mathematics for Computer Graphics', 3),
+('SCSV', 1223, 'Web Programming', 'Web Prog', 3),
+('SCSV', 2013, 'Graphic Design', 'Graphic Design', 3),
+('SCSV', 2113, 'Human Computer Interaction', 'HCI', 3),
+('SCSV', 2122, 'Fundamental of image Processing', 'Fundamental of image Processing', 3),
+('SCSV', 3032, 'Graphics and Multimedia Software Project I', 'Graphics and Multimedia Software Project I', 2),
+('SCSV', 3104, 'Applications Development', 'AD', 4),
+('SCSV', 3113, 'Geometric Modelling', 'Geometric Modelling', 3),
+('SCSV', 3123, 'Real-time Computer Graphics', 'Real-time Computer Graphics', 3),
+('SCSV', 3213, 'Fundamental of Image Processing', 'Fundamental of Image Processing', 3),
+('SCSV', 3223, 'Multimedia Data Processing', 'Multimedia Data Processing', 3),
+('SCSV', 3233, 'Multimedia Networking', 'Multimedia Networking', 3),
+('SCSV', 4114, 'Industrial Training Report', 'LI Report', 4),
+('SCSV', 4118, 'Industrial Training (HW)', 'LI (HW)', 8),
+('SCSV', 4213, 'Computer Games Development', 'Computer Games Development', 3),
+('SCSV', 4233, 'Data Visualization', 'Data Visualization', 3),
+('SCSV', 4263, 'Multimedia Web Programming', 'Multimedia Web Programming', 3),
+('SCSV', 4273, 'Introduction to Speech Recognition', 'Introduction to Speech Recognition', 3),
+('SCSV', 4283, 'Windows Programming', 'Windows Programming', 3),
+('UCSD', 2762, 'Fundamental of Technopreneurship', 'Fundamental of Technopreneurship', 2),
+('UHAS', 1162, 'Art, Custom and Beliefs of Malaysia', 'Art, Custom and Beliefs of Malaysia', 2),
+('UHAS', 1172, 'Malaysia Dynamic', 'Malaysia Dynamic', 2),
+('UICI', 1022, 'Islamic & Aisan Civilisation (TITAS)', 'TITAS', 2),
+('UICI', 2032, 'Science, Technology & Human', 'STM', 2),
+('ULAB', 1112, 'Academic English Skills', 'Academic English Skills', 2),
+('ULAB', 2122, 'Advanced Academic English Skills', 'Advanced Academic English Skills', 2),
+('ULAB', 3162, 'English for Professional Purpose', 'English for Professional Purpose', 2),
+('ULAM', 1112, 'Bahasa Melayu untuk Komunikasi', 'Bahasa Melayu untuk Komunikasi', 2);
+
+SET IDENTITY_INSERT "course" OFF;
+
+
+
+CREATE TABLE dbo.course_offered
+(
+  semesterID int(10) NOT NULL, 
+ courseCode varchar(5) NOT NULL, 
+ courseID int(10) NOT NULL, 
+ username varchar(30) NOT NULL, 
+ course_offered_ID int(10) NOT NULL IDENTITY, 
+ CONSTRAINT PK_course_offered_course_offered_ID PRIMARY KEY (course_offered_ID), 
+ CONSTRAINT course_offered$course_offered_ibfk_1 FOREIGN KEY (semesterID) REFERENCES dbo.year_semester (semesterID), 
+ CONSTRAINT course_offered$course_offered_ibfk_2 FOREIGN KEY (semesterID) REFERENCES dbo.year_semester (semesterID), 
+ CONSTRAINT course_offered$course_offered_ibfk_4 FOREIGN KEY (courseID) REFERENCES dbo.course (courseID),
+ CONSTRAINT course_offered$course_offered_ibfk_5 FOREIGN KEY (username) REFERENCES dbo.[user] (username)
+ )  CREATE NONCLUSTERED INDEX semesterID
+ ON dbo.course_offered (semesterID ASC)  CREATE NONCLUSTERED INDEX courseCode
+ ON dbo.course_offered (courseCode ASC)  CREATE NONCLUSTERED INDEX courseID
+ ON dbo.course_offered (courseID ASC)  CREATE NONCLUSTERED INDEX username
+ ON dbo.course_offered (username ASC) 
+
+CREATE TABLE dbo.section
+(
+ username varchar(30) NOT NULL, 
+ semesterID int NOT NULL, 
+ sectionID int NOT NULL IDENTITY, 
+ courseCode varchar(5) NOT NULL, 
+ courseID int NOT NULL, 
+ sectionNo int NOT NULL, 
+ sectionMajor varchar(20) NOT NULL, 
+ course_offered_ID int NOT NULL, 
+ CONSTRAINT PK_section_sectionID PRIMARY KEY (sectionID), 
+ CONSTRAINT section$section_ibfk_1 FOREIGN KEY (course_offered_ID) REFERENCES dbo.course_offered (course_offered_ID), 
+)  CREATE NONCLUSTERED INDEX course_offered_ID
+ ON dbo.section (course_offered_ID ASC)  CREATE NONCLUSTERED INDEX username
+ ON dbo.section (username ASC) 
+
+ CREATE TABLE dbo.section_lecturer
+ (
+  username varchar(30) NOT NULL, 
+  sectionID int NOT NULL, 
+  CONSTRAINT section_lecturer$section_lecturer_ibfk_1 FOREIGN KEY (sectionID) REFERENCES dbo.section (sectionID)
+ )  CREATE NONCLUSTERED INDEX sectionID
+ ON dbo.section_lecturer (sectionID ASC) 
+
+CREATE TABLE dbo.student
+(
+  student_name varchar(60) NOT NULL, 
+  matricNo varchar(9) NOT NULL, 
+  phoneNo varchar(15) NOT NULL, 
+  email varchar(30) NOT NULL, 
+  student_IC varchar(16) NOT NULL, 
+  address varchar(255) NOT NULL, 
+  DOB varchar(15) NOT NULL, 
+  gender varchar(10) NOT NULL, 
+  race varchar(10) NOT NULL, 
+  nationality varchar(20) NOT NULL, 
+  guardian_name varchar(100) NOT NULL, 
+  occupation varchar(50) NOT NULL, 
+  guardian_phoneNo varchar(15) NOT NULL, 
+  salary float(53) NOT NULL, 
+  guardian_address varchar(255) NOT NULL, 
+  CONSTRAINT PK_student_matricNo PRIMARY KEY (matricNo)
+) 
+
+CREATE TABLE dbo.[user]
+(
+  username varchar(30) NOT NULL, 
+  password varchar(255) NOT NULL, 
+  userType varchar(30) NOT NULL, 
+  viewPermission varchar(255) NOT NULL, 
+ CONSTRAINT PK_user_username PRIMARY KEY (username)
+)
+
+SET IDENTITY_INSERT "user" ON ;
+INSERT INTO user (username, password, userType, viewPermission) VALUES
+('admin', 'admin', 'admin', 'ADMIN'),
+('lecturer', 'lecturer', 'lecturer', 'LECTURER'),
+('student', 'student', 'student', 'STUDENT');
+
+SET IDENTITY_INSERT "user" OFF;
+ 
+
+CREATE TABLE dbo.year_semester
+(
+  semesterID int(10) NOT NULL IDENTITY(2, 1), 
+  year varchar(10) NOT NULL, 
+  semester int(1) NOT NULL, 
+  CONSTRAINT PK_year_semester_semesterID PRIMARY KEY (semesterID)
+) 
+
+SET IDENTITY_INSERT "year_semester" ON ;
+INSERT INTO year_semester (semesterID, year, semester) VALUES
+(1, '20162017', 1);
+
+SET IDENTITY_INSERT "year_semester" OFF;
