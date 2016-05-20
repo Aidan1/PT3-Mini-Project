@@ -22,15 +22,6 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// TabContainer1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabContainer TabContainer1;
-        
-        /// <summary>
         /// TabPanel1 control.
         /// </summary>
         /// <remarks>
@@ -103,13 +94,13 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.Label LabelEmail;
         
         /// <summary>
-        /// TextBox3 control.
+        /// TextBoxEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
         
         /// <summary>
         /// LabelStudentIC control.

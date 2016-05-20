@@ -102,6 +102,7 @@
     <Content Include="App_Data\e-campus_log.ldf">
       <DependentUpon>e-campus.mdf</DependentUpon>
     </Content>
+    <Content Include="e-campus.mdf" />
     <Content Include="Home\login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
