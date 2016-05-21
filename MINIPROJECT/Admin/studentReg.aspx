@@ -7,13 +7,12 @@
     </div><!-- /.box-header -->
     <div class="box-body">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <ajaxToolkit:TabContainer runat="server" Height="600px"  ActiveTabIndex="1" Width="450px">
-             <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
-                <HeaderTemplate>
-                    Personal Info
-                </HeaderTemplate>
-                <ContentTemplate>
                     <table style="width: 100%; border: 0; padding: 0" >
+                        <tr>
+                            <th colspan="3">
+                                Personal Info 
+                            </th>
+                        </tr>
                         <tr>
                             <td> <asp:Label ID="LabelStudentName" runat="server" Text="Student Name :"></asp:Label></td>
                             <td><asp:TextBox ID="TextBoxStudentName" runat="server"></asp:TextBox> </td>
@@ -65,18 +64,16 @@
                             <td>&nbsp;</td>
                         </tr>
                     </table>
-                </ContentTemplate>
-            </ajaxToolkit:TabPanel>
-            <ajaxToolkit:TabPanel ID="TabPanel2" runat="server" HeaderText="TabPanel2">
-                <HeaderTemplate>
-                    Contact Person
-                </HeaderTemplate>
-                <ContentTemplate>
-                    <table style="width: 100%; border: 0; padding: 0" >
+                    <table style="border-style: none; border-color: inherit; border-width: 0; padding: 0;" class="nav-justified" >
                         <tr>
-                            <td><asp:Label ID="LabelGuardianName" runat="server" Text="Guardian Name "></asp:Label></td>
-                            <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
-                            <td>&nbsp;</td>
+                            <th colspan="3">
+                                Contact Person 
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="height: 22px"><asp:Label ID="LabelGuardianName" runat="server" Text="Guardian Name "></asp:Label></td>
+                            <td style="height: 22px"><asp:TextBox ID="TextBoxGuardianName" runat="server"></asp:TextBox></td>
+                            <td style="height: 22px"></td>
                         </tr>
                         <tr>
                             <td><asp:Label ID="LabelOccupation" runat="server" Text="Occupation      "></asp:Label></td>
@@ -94,14 +91,16 @@
                             <td>&nbsp;</td>
                         </tr>
                          <tr>
-                            <td>  <asp:Label ID="LabelGuardianAddress" runat="server" Text="Address "></asp:Label></td>
-                            <td> <asp:TextBox ID="TextGuardianAddress" runat="server"></asp:TextBox></td>
+                            <td><asp:Label ID="LabelGuardianAddress" runat="server" Text="Address "></asp:Label></td>
+                            <td><asp:TextBox ID="TextGuardianAddress" runat="server"></asp:TextBox></td>
                             <td>&nbsp;</td>
                         </tr>
+                        <tr>
+                            <td colspan="3">
+                                <asp:Button ID="Button1" runat="server" Text="Register" Width="223px" OnClick="registerStudent" />
+                            </td>
+                        </tr>
                     </table>
-                </ContentTemplate>
-            </ajaxToolkit:TabPanel>
-                
-        </ajaxToolkit:TabContainer>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </div>
 </asp:Content>

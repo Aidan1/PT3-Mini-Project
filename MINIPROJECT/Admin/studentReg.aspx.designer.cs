@@ -22,15 +22,6 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// TabPanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel TabPanel1;
-        
-        /// <summary>
         /// LabelStudentName control.
         /// </summary>
         /// <remarks>
@@ -211,15 +202,6 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNationality;
         
         /// <summary>
-        /// TabPanel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel TabPanel2;
-        
-        /// <summary>
         /// LabelGuardianName control.
         /// </summary>
         /// <remarks>
@@ -229,13 +211,13 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.Label LabelGuardianName;
         
         /// <summary>
-        /// TextBox1 control.
+        /// TextBoxGuardianName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxGuardianName;
         
         /// <summary>
         /// LabelOccupation control.
@@ -308,5 +290,23 @@ namespace MINIPROJECT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextGuardianAddress;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }
