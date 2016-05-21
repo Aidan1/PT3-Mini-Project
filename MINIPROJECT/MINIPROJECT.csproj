@@ -102,7 +102,6 @@
     <Content Include="App_Data\e-campus_log.ldf">
       <DependentUpon>e-campus.mdf</DependentUpon>
     </Content>
-    <Content Include="e-campus.mdf" />
     <Content Include="Home\login.aspx" />
     <Content Include="landingpage.aspx" />
     <Content Include="LandingPage\css\StyleSheet1.css" />
@@ -270,6 +269,9 @@
     <Folder Include="LandingPage\js\" />
     <Folder Include="LandingPage\sass\" />
     <Folder Include="plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
