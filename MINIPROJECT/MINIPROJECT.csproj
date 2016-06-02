@@ -104,10 +104,6 @@
     </Content>
     <Content Include="Home\login.aspx" />
     <Content Include="landingpage.aspx" />
-    <Content Include="LandingPage\css\StyleSheet1.css" />
-    <Content Include="LandingPage\index.html" />
-    <Content Include="LandingPage\login.aspx" />
-    <Content Include="LandingPage\README.txt" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -116,7 +112,6 @@
     <Content Include="Admin\AdminMasterPage.Master" />
     <Content Include="Student\StudentMasterPage.Master" />
     <Content Include="Home\HomeMasterPage.Master" />
-    <Content Include="LandingPage\.DS_Store" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -196,13 +191,6 @@
     <Compile Include="landingpage.aspx.designer.cs">
       <DependentUpon>landingpage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LandingPage\login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LandingPage\login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Lecturer\attendance.aspx.cs">
       <DependentUpon>attendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -264,10 +252,6 @@
   <ItemGroup>
     <Folder Include="bootstrap\" />
     <Folder Include="dist\" />
-    <Folder Include="LandingPage\fonts\" />
-    <Folder Include="LandingPage\images\" />
-    <Folder Include="LandingPage\js\" />
-    <Folder Include="LandingPage\sass\" />
     <Folder Include="plugins\" />
   </ItemGroup>
   <ItemGroup>
