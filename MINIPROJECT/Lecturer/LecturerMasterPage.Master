@@ -88,9 +88,24 @@
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
+
             <li class="header">MAIN NAVIGATION</li>
+
             <li><a href="attendance.aspx"><i class="fa fa-book"></i> <span>Attendance</span></a></li>
-            <li><a href="grade.aspx"><i class="fa fa-book"></i> <span>Grade</span></a></li>
+              <ul class="menu">
+
+                <li><a href="createattendance.aspx">Create Attendance</a></li>
+                <li><a href="listattendance.aspx">List Attendance</a></li>
+                    <!-- ... -->
+               </ul>     
+
+              <li><a href="grade.aspx"><i class="fa fa-book"></i> <span>Grade</span></a></li>
+              <ul class="menu">
+
+                <li><a href="listgrade.aspx">List Grade</a></li>
+                    <!-- ... -->
+               </ul>     
+
           </ul>
         </section>
         <!-- /.sidebar -->

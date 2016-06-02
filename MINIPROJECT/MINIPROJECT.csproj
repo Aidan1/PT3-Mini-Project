@@ -102,8 +102,10 @@
     <Content Include="App_Data\e-campus_log.ldf">
       <DependentUpon>e-campus.mdf</DependentUpon>
     </Content>
-    <Content Include="e-campus.mdf" />
     <Content Include="Home\login.aspx" />
+    <Content Include="Lecturer\createattendance.aspx" />
+    <Content Include="Lecturer\listattendance.aspx" />
+    <Content Include="Lecturer\listgrade.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -191,6 +193,13 @@
     <Compile Include="Lecturer\attendance.aspx.designer.cs">
       <DependentUpon>attendance.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Lecturer\createattendance.aspx.cs">
+      <DependentUpon>createattendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\createattendance.aspx.designer.cs">
+      <DependentUpon>createattendance.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Lecturer\grade.aspx.cs">
       <DependentUpon>grade.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,6 +213,20 @@
     </Compile>
     <Compile Include="Lecturer\LecturerMasterPage.Master.designer.cs">
       <DependentUpon>LecturerMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\listattendance.aspx.cs">
+      <DependentUpon>listattendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\listattendance.aspx.designer.cs">
+      <DependentUpon>listattendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\listgrade.aspx.cs">
+      <DependentUpon>listgrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\listgrade.aspx.designer.cs">
+      <DependentUpon>listgrade.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student\profile.aspx.cs">
