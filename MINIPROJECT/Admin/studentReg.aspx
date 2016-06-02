@@ -11,36 +11,78 @@
                         <tr>
                             <th colspan="3">
                                 Personal Info 
-                            </th>
+                            </th> 
                         </tr>
                         <tr>
                             <td> <asp:Label ID="LabelStudentName" runat="server" Text="Student Name :"></asp:Label></td>
-                            <td><asp:TextBox ID="TextBoxStudentName" runat="server"></asp:TextBox> </td>
+                            <td>
+                                <asp:TextBox ID="TextBoxStudentName" runat="server"></asp:TextBox> 
+                                <asp:RequiredFieldValidator runat="server" id="reqName" controltovalidate="TextBoxStudentName" errormessage="Name cannot be blank" ForeColor="Red">*Warning!!!</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="regName" runat="server" 
+                                   ControlToValidate="TextBoxStudentName" 
+                                   ValidationExpression="^[a-zA-Z'.\s]{1,50}"
+                                   Text="Enter a valid name" /> 
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td> <asp:Label ID="LabelMatricNo" runat="server" Text="Matric No :"></asp:Label></td>
                             <td><asp:TextBox ID="TextBoxMatricNo" runat="server"></asp:TextBox></td>
+                            <asp:RequiredFieldValidator runat="server" id="reqMatricNo" controltovalidate="TextBoxStudentName" errormessage="MatricNo cannot be blank" ForeColor="Red">*Warning!!!</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="regMatricNo" runat="server"    
+                                ErrorMessage="MatricNo length must be 9 alphanumeric only"
+                                ControlToValidate="TextBoxMatricNo"    
+                                ValidationExpression="^[a-zA-Z0-9\s]{9}$" />
                             <td>&nbsp;</td>
                         </tr>
                          <tr>
                             <td><asp:Label ID="LabelPhoneNo" runat="server" Text="Phone Number :"></asp:Label></td>
-                            <td> <asp:TextBox ID="TextBoxPhoneNo" runat="server"></asp:TextBox></td>
+                            <td> 
+                                <asp:TextBox ID="TextBoxPhoneNo" runat="server"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="regPhoneNo" 
+                                    runat="server" ErrorMessage="Enter valid Phone number" 
+                                    ControlToValidate="TextBoxPhoneNo" 
+                                    ValidationExpression= "^([0-9\(\)\/\+ \-]*)$"/>
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                          <tr>
                             <td><asp:Label ID="LabelEmail" runat="server" Text="Email :"></asp:Label></td>
-                            <td> <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox></td>
+                            <td> 
+                                <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
+                                <asp:RegularExpressionValidator
+                                    ID="regEmail"
+                                    ControlToValidate="TextBoxEmail"
+                                    Text="Email format is invalid"
+                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    errormessage="Enter a valid email address" 
+                                    ForeColor="Red"
+                                    runat="server" /> 
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                          <tr>
                             <td><asp:Label ID="LabelStudentIC" runat="server" Text="Student IC :"></asp:Label></td>
-                            <td><asp:TextBox ID="TextBoxStudentIC" runat="server"></asp:TextBox></td>
+                            <td>
+                                <asp:TextBox ID="TextBoxStudentIC" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" id="reqIC" controltovalidate="TextBoxStudentIC" errormessage="IC cannot be blank" ForeColor="Red">*Warning!!!</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator
+                                    ID="regIC"
+                                    ControlToValidate="TextBoxStudentIC"
+                                    Text="IC format is invalid"
+                                    ValidationExpression="^\\d{6}\\-\\d{2}\\-\\d{4}$"
+                                    errormessage="Enter a valid IC" 
+                                    ForeColor="Red"
+                                    runat="server" />
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td> <asp:Label ID="LabelAddress" runat="server" Text="Address :"></asp:Label></td>
-                            <td><asp:TextBox ID="TextBoxAddress" runat="server"></asp:TextBox></td>
+                            <td>
+                                <asp:TextBox ID="TextBoxAddress" runat="server" style="height:100px; width:250px;" TextMode="multiline"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" id="reqAddress" controltovalidate="TextBoxAddress" errormessage="Address cannot be blank" ForeColor="Red"> *Warning!!! </asp:RequiredFieldValidator>
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                          <tr>
@@ -50,7 +92,22 @@
                         </tr>
                          <tr>
                             <td><asp:Label ID="LabelGender" runat="server" Text="Gender :"></asp:Label></td>
-                            <td> <asp:TextBox ID="TextBoxGender" runat="server"></asp:TextBox></td>
+                            <td> 
+                                <asp:CheckBox 
+                                        ID="male" 
+                                        runat="server" 
+                                        Text="Male" 
+                                        AutoPostBack="true"
+                                        Font-Names="Serif"
+                                        /> 
+                                <asp:CheckBox 
+                                        ID="female" 
+                                        runat="server" 
+                                        Text="Female" 
+                                        AutoPostBack="true"
+                                        Font-Names="Serif"
+                                        /> 
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
@@ -64,8 +121,9 @@
                             <td>&nbsp;</td>
                         </tr>
                     </table>
+                    <br/>
                     <table style="border-style: none; border-color: inherit; border-width: 0; padding: 0;" class="nav-justified" >
-                        <tr>
+                        <tr> 
                             <th colspan="3">
                                 Contact Person 
                             </th>

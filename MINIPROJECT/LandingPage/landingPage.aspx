@@ -232,10 +232,7 @@
 							 } %>                 
 					</div>         
 					<div class="modal-footer">
-						<div style="float:left;">
-							<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-times"> Cancel</i></button>
-						</div>        
-						<a class="btn btn-success" href="/register.aspx" role="button"><i class="icon-sign-in"> Sign Up</i></a>
+						<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-times"> Cancel</i></button>        
 						<button id="Button1" class="btn btn-primary" runat="server" onserverclick="Button1_Click"><i class ="icon-star-half-empty"></i> Submit</button>
 					</div>
 				</form>
@@ -339,9 +336,9 @@
 								<div class="position">Web Developer</div>
 								<p>"The programmers of tomorrow are the wizards of the future. You're going to look like you have magic powers compared to everybody else"</p>
 								<ul class="social social-circle">
-									<li><a href="https://www.facebook.com/amier.musstaqim"><i class="icon-facebook"></i></a></li>
-									<li><a href="https://www.instagram.com/amier164/"><i class="icon-instagram"></i></a></li>
-									<li><a href="https://github.com/amier164"><i class="icon-github"></i></a></li>
+									<li><a href="https://www.facebook.com/amier.musstaqim" target="_blank"><i class="icon-facebook"></i></a></li>
+									<li><a href="https://www.instagram.com/amier164/" target="_blank"><i class="icon-instagram"></i></a></li>
+									<li><a href="https://github.com/amier164" target="_blank"><i class="icon-github"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -352,9 +349,9 @@
 								<div class="position">Back - End Developer</div>
 								<p>"The season of failure is the best time for sowing the seeds of success"</p>
 								<ul class="social social-circle">
-									<li><a href="https://www.facebook.com/dzul.tumiran"><i class="icon-facebook"></i></a></li>
-									<li><a href="https://www.instagram.com/ejulfae/"><i class="icon-instagram"></i></a></li>
-									<li><a href="https://github.com/ejulfaey"><i class="icon-github"></i></a></li>
+									<li><a href="https://www.facebook.com/dzul.tumiran" target="_blank"><i class="icon-facebook"></i></a></li>
+									<li><a href="https://www.instagram.com/ejulfae/" target="_blank"><i class="icon-instagram"></i></a></li>
+									<li><a href="https://github.com/ejulfaey" target="_blank"><i class="icon-github"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -365,9 +362,9 @@
 								<div class="position">Front - End Developer</div>
 								<p>"If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward."</p>
 								<ul class="social social-circle">
-									<li><a href="https://www.facebook.com/appleblssom"><i class="icon-facebook"></i></a></li>
-									<li><a href="https://www.instagram.com/ynyzd/"><i class="icon-instagram"></i></a></li>
-									<li><a href="https://github.com/Lyana2"><i class="icon-github"></i></a></li>
+									<li><a href="https://www.facebook.com/appleblssom" target="_blank"><i class="icon-facebook"></i></a></li>
+									<li><a href="https://www.instagram.com/ynyzd/" target="_blank"><i class="icon-instagram"></i></a></li>
+									<li><a href="https://github.com/Lyana2" target="_blank"><i class="icon-github"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -379,9 +376,9 @@
 								<div class="position">System Analyst</div>
 								<p>"Have the courage to follow your heart and intuition. They somehow know what you truly want to become."</p>
 								<ul class="social social-circle">
-									<li><a href="https://www.facebook.com/aidan.toh"><i class="icon-facebook"></i></a></li>
-									<li><a href="https://www.instagram.com/aidantoh/"><i class="icon-instagram"></i></a></li>
-									<li><a href="https://github.com/Aidan1"><i class="icon-github"></i></a></li>
+									<li><a href="https://www.facebook.com/aidan.toh" target="_blank"><i class="icon-facebook"></i></a></li>
+									<li><a href="https://www.instagram.com/aidantoh/" target="_blank"><i class="icon-instagram"></i></a></li>
+									<li><a href="https://github.com/Aidan1" target="_blank"><i class="icon-github"></i></a></li>
 								</ul>
 							</div>
 						</div>

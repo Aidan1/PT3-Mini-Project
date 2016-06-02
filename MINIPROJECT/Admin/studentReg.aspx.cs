@@ -46,7 +46,17 @@ namespace MINIPROJECT.Admin
             student.studentIc = TextBoxStudentIC.Text;
             student.address = TextBoxAddress.Text;
             student.dob = TextBoxDateOfBirth.Text;
-            student.gender = TextBoxGender.Text;
+
+            if (male.Checked)
+            {
+                student.gender = male.Text;
+            }
+
+            if (female.Checked)
+            {
+                student.gender = female.Text;
+            }
+            
             student.race = TextBoxRace.Text;
             student.nationality = TextBoxNationality.Text;
             student.guardian = TextBoxGuardianName.Text;
