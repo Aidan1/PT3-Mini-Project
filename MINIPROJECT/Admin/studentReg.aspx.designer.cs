@@ -40,6 +40,15 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxStudentName;
         
         /// <summary>
+        /// RequiredStudentName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredStudentName;
+        
+        /// <summary>
         /// LabelMatricNo control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace MINIPROJECT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxMatricNo;
+        
+        /// <summary>
+        /// RequiredMatricNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredMatricNo;
         
         /// <summary>
         /// LabelPhoneNo control.
@@ -157,13 +175,22 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.Label LabelGender;
         
         /// <summary>
-        /// TextBoxGender control.
+        /// RadioButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxGender;
+        protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
+        
+        /// <summary>
+        /// RadioButton2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
         
         /// <summary>
         /// LabelRace control.

@@ -15,13 +15,17 @@
                         </tr>
                         <tr>
                             <td> <asp:Label ID="LabelStudentName" runat="server" Text="Student Name :"></asp:Label></td>
-                            <td><asp:TextBox ID="TextBoxStudentName" runat="server"></asp:TextBox> </td>
-                            <td>&nbsp;</td>
+                            <td><asp:TextBox ID="TextBoxStudentName" runat="server" Width="100%"></asp:TextBox> </td>
+                            <td>
+                                <asp:RequiredFieldValidator ID="RequiredStudentName" ControlToValidate="TextBoxStudentName" runat="server" ErrorMessage="Name Required"></asp:RequiredFieldValidator></td>
                         </tr>
                         <tr>
                             <td> <asp:Label ID="LabelMatricNo" runat="server" Text="Matric No :"></asp:Label></td>
-                            <td><asp:TextBox ID="TextBoxMatricNo" runat="server"></asp:TextBox></td>
-                            <td>&nbsp;</td>
+                            <td><asp:TextBox ID="TextBoxMatricNo" runat="server" Width="100%"></asp:TextBox></td>
+                            <td>
+                                <asp:RequiredFieldValidator ID="RequiredMatricNo" ControlToValidate="TextBoxMatricNo" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+
+                            </td>
                         </tr>
                          <tr>
                             <td><asp:Label ID="LabelPhoneNo" runat="server" Text="Phone Number :"></asp:Label></td>
@@ -50,7 +54,10 @@
                         </tr>
                          <tr>
                             <td><asp:Label ID="LabelGender" runat="server" Text="Gender :"></asp:Label></td>
-                            <td> <asp:TextBox ID="TextBoxGender" runat="server"></asp:TextBox></td>
+                            <td>
+                                <asp:RadioButton ID="RadioButton1" Checked="true" GroupName="gender" Text="Male" runat="server" />
+                                <asp:RadioButton ID="RadioButton2" Text="Female" GroupName="gender" runat="server" />
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>

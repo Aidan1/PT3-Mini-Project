@@ -38,6 +38,18 @@ namespace MINIPROJECT.Admin
 
         protected void registerStudent(object sender, EventArgs e)
         {
+            string gender = string.Empty;
+
+            if (RadioButton1.Checked)
+            {
+                gender = "Male";
+            }
+
+            else if (RadioButton2.Checked)
+            {
+                gender = "Female";
+            }
+
             Student student = new Student();
             student.username = TextBoxStudentName.Text;
             student.matricNo = TextBoxMatricNo.Text;
@@ -46,7 +58,7 @@ namespace MINIPROJECT.Admin
             student.studentIc = TextBoxStudentIC.Text;
             student.address = TextBoxAddress.Text;
             student.dob = TextBoxDateOfBirth.Text;
-            student.gender = TextBoxGender.Text;
+            student.gender = gender;
             student.race = TextBoxRace.Text;
             student.nationality = TextBoxNationality.Text;
             student.guardian = TextBoxGuardianName.Text;
