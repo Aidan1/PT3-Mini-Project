@@ -6,21 +6,29 @@
     </div>
 
    <br />
-   <br />
 
-     <form action="demo_form.asp">
-         Choose Course&nbsp;
+    <form action="demo_form.asp">
+        Choose Course&nbsp;
          <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="courseCode" DataValueField="courseID">
          </asp:DropDownList>
 
+        <br />
+        <br />
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [courseCode], [courseID] FROM [course]"></asp:SqlDataSource>
+        Choose Subject&nbsp;
+         <asp:DropDownList ID="DropDownList2" runat="server">
+         </asp:DropDownList>
+    </form>
+
     <br />
     <br />
 
-         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [courseCode], [courseID] FROM [course]"></asp:SqlDataSource>
-         Choose Subject&nbsp;
-         <asp:DropDownList ID="DropDownList2" runat="server">
+     Choose Section
+         <asp:DropDownList ID="DropDownList3" runat="server">
          </asp:DropDownList>
-     </form>
+   <br />
+
     <br />
 
      Date&nbsp;
