@@ -5,6 +5,6 @@
         <h3 class="box-title">Attendance</h3>
     </div><!-- /.box-header -->
     <div class="box-body">
-        <strong>Amier</strong>
+        <strong>Attendance</strong>
     </div>
 </asp:Content>
