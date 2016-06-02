@@ -641,8 +641,8 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<ul class="social social-circle">
-						<li><a href="https://www.facebook.com/univteknologimalaysia/"><i class="icon-facebook"></i></a></li>
-						<li><a href="https://www.instagram.com/utmofficial/"><i class="icon-instagram"></i></a></li>
+						<li><a href="https://www.facebook.com/univteknologimalaysia/" target="_blank"><i class="icon-facebook"></i></a></li>
+						<li><a href="https://www.instagram.com/utmofficial/" target="_blank"><i class="icon-instagram"></i></a></li>
 					</ul>
 				</div>
 			</div>

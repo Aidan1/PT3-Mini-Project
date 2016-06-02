@@ -72,16 +72,7 @@ namespace MINIPROJECT.Admin
             cmd.CommandText = "INSERT student (student_name, matricNo, phoneNo, email, student_IC, address, DOB, gender, race, nationality, guardian_name, occupation, guardian_phoneNo, salary, guardian_address) VALUES('" + student.username + "','" + student.matricNo + "','" + student.phoneNo + "','" + student.email + "','" + student.studentIc + "','" + student.address + "','" + student.dob + "','" + student.gender + "','" + student.race + "','" + student.nationality + "','" + student.guardian + "','" + student.occupation + "','" + student.g_phoneNo + "','" + student.salary + "','" + student.g_address + "')";
             cmd.Connection = con;
 
-            con.Open();
-            if(cmd.ExecuteNonQuery() > 0)
-            {
-                Label1.Text = "success";
-            }
-            else
-            {
-                Label1.Text = "failed";
-            }
-            
+            con.Open();           
             con.Close();
         }
     }
