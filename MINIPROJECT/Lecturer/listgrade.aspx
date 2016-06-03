@@ -7,11 +7,11 @@
     </div>
 
     <br />
-    Choose Subject<asp:DropDownList ID="DropDownList1" runat="server">
+    Choose Subject&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server">
     </asp:DropDownList>
     <br />
     <br />
-    <asp:GridView ID="GridView1" runat="server">
+    <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
     </asp:GridView>
     <br />
      <asp:Button ID="Button1" runat="server" Text="EDIT" />
