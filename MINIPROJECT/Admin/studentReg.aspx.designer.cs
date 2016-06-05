@@ -13,13 +13,13 @@ namespace MINIPROJECT.Admin {
     public partial class studentReg {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// toolkit1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::AjaxControlToolkit.ToolkitScriptManager toolkit1;
         
         /// <summary>
         /// LabelStudentName control.
@@ -112,6 +112,15 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxPhoneNo;
         
         /// <summary>
+        /// reqPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPhoneNo;
+        
+        /// <summary>
         /// regPhoneNo control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace MINIPROJECT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
+        
+        /// <summary>
+        /// reqEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqEmail;
         
         /// <summary>
         /// regEmail control.
@@ -229,6 +247,24 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxDateOfBirth;
         
         /// <summary>
+        /// img control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton img;
+        
+        /// <summary>
+        /// Calendar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender Calendar1;
+        
+        /// <summary>
         /// LabelGender control.
         /// </summary>
         /// <remarks>
@@ -274,6 +310,15 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxRace;
         
         /// <summary>
+        /// reqRace control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqRace;
+        
+        /// <summary>
         /// LabelNationality control.
         /// </summary>
         /// <remarks>
@@ -290,6 +335,15 @@ namespace MINIPROJECT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxNationality;
+        
+        /// <summary>
+        /// reqNationality control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqNationality;
         
         /// <summary>
         /// LabelGuardianName control.
@@ -310,6 +364,24 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxGuardianName;
         
         /// <summary>
+        /// reqGuardianName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGuardianName;
+        
+        /// <summary>
+        /// regGuardianName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regGuardianName;
+        
+        /// <summary>
         /// LabelOccupation control.
         /// </summary>
         /// <remarks>
@@ -326,6 +398,15 @@ namespace MINIPROJECT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxOccupation;
+        
+        /// <summary>
+        /// reqOccupation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqOccupation;
         
         /// <summary>
         /// LabelGuardianPhoneNo control.
@@ -346,6 +427,24 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxGuardianPhoneNo;
         
         /// <summary>
+        /// reqGuardianPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGuardianPhoneNo;
+        
+        /// <summary>
+        /// regGuardianPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regGuardianPhoneNo;
+        
+        /// <summary>
         /// LabelSalary control.
         /// </summary>
         /// <remarks>
@@ -362,6 +461,24 @@ namespace MINIPROJECT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxSalary;
+        
+        /// <summary>
+        /// reqSalary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqSalary;
+        
+        /// <summary>
+        /// regSalary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regSalary;
         
         /// <summary>
         /// LabelGuardianAddress control.
@@ -382,6 +499,15 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextGuardianAddress;
         
         /// <summary>
+        /// reqGuardianAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGuardianAddress;
+        
+        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -389,14 +515,5 @@ namespace MINIPROJECT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }

@@ -1,18 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="manageStudent.aspx.cs" Inherits="MINIPROJECT.Admin.manageStudent" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
-    <asp:Label ID="Label1" runat="server" Text="List Of Student"></asp:Label>
-    <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="matricNo" DataSourceID="SqlDataSource1" Width="384px">
+    <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="matricNo" DataSourceID="SqlDataSource1" Width="100%" PageSize="5">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
+            <asp:BoundField DataField="matricNo" HeaderText="Matric No" ReadOnly="True" SortExpression="matricNo" HeaderStyle-CssClass="header-padding">
+                <ItemStyle CssClass="header-padding" />
+            </asp:BoundField>
+            <asp:BoundField DataField="student_name" HeaderText="Student Name" SortExpression="student_name" />
             <asp:CommandField ShowSelectButton="True" />
-            <asp:BoundField DataField="matricNo" HeaderText="matricNo" ReadOnly="True" SortExpression="matricNo" />
-            <asp:BoundField DataField="student_name" HeaderText="student_name" SortExpression="student_name" />
         </Columns>
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB" BorderStyle="None" ForeColor="White" VerticalAlign="Middle" Height="50px"></HeaderStyle>
         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#EFF3FB" />
+        <RowStyle BackColor="#EFF3FB"/>
         <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
         <SortedAscendingCellStyle BackColor="#F5F7FB" />
         <SortedAscendingHeaderStyle BackColor="#6D95E1" />
@@ -21,32 +22,81 @@
     </asp:GridView>  
     <br />
     <br />
-    <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataKeyNames="matricNo" DataSourceID="SqlDataSource2" OnItemDeleted="DetailsView1_ItemDeleted" OnItemUpdated="DetailsView1_ItemUpdated" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+    <asp:DetailsView ID="DetailsView1" runat="server" Width="100%" AutoGenerateRows="False" DataKeyNames="matricNo" DataSourceID="SqlDataSource2" OnItemDeleted="DetailsView1_ItemDeleted" OnItemUpdated="DetailsView1_ItemUpdated" Height="50px">
         <EditRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
         <Fields>
-            <asp:BoundField DataField="student_name" HeaderText="student_name" SortExpression="student_name" />
-            <asp:BoundField DataField="matricNo" HeaderText="matricNo" ReadOnly="True" SortExpression="matricNo" />
-            <asp:BoundField DataField="phoneNo" HeaderText="phoneNo" SortExpression="phoneNo" />
-            <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-            <asp:BoundField DataField="student_IC" HeaderText="student_IC" SortExpression="student_IC" />
-            <asp:BoundField DataField="address" HeaderText="address" SortExpression="address" />
-            <asp:BoundField DataField="DOB" HeaderText="DOB" SortExpression="DOB" />
-            <asp:BoundField DataField="gender" HeaderText="gender" SortExpression="gender" />
-            <asp:BoundField DataField="race" HeaderText="race" SortExpression="race" />
-            <asp:BoundField DataField="nationality" HeaderText="nationality" SortExpression="nationality" />
-            <asp:BoundField DataField="guardian_name" HeaderText="guardian_name" SortExpression="guardian_name" />
-            <asp:BoundField DataField="occupation" HeaderText="occupation" SortExpression="occupation" />
-            <asp:BoundField DataField="guardian_phoneNo" HeaderText="guardian_phoneNo" SortExpression="guardian_phoneNo" />
-            <asp:BoundField DataField="salary" HeaderText="salary" SortExpression="salary" />
-            <asp:BoundField DataField="guardian_address" HeaderText="guardian_address" SortExpression="guardian_address" />
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            <asp:BoundField DataField="student_name" HeaderText="Student Name" SortExpression="student_name">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="matricNo" HeaderText="Matric No" ReadOnly="True" SortExpression="matricNo">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="phoneNo" HeaderText="Phone No" SortExpression="phoneNo">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="student_IC" HeaderText="Student IC" SortExpression="student_IC">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="address" HeaderText="Address" SortExpression="address">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="DOB" HeaderText="Date of Birth" SortExpression="DOB">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="gender" HeaderText="Gender" SortExpression="gender">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="race" HeaderText="Race" SortExpression="race">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="nationality" HeaderText="Nationality" SortExpression="nationality">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="guardian_name" HeaderText="Guardian Name" SortExpression="guardian_name">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="occupation" HeaderText="Occupation" SortExpression="occupation">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="guardian_phoneNo" HeaderText="Guardian Phone No" SortExpression="guardian_phoneNo">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="salary" HeaderText="Salary" SortExpression="salary">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:BoundField DataField="guardian_address" HeaderText="Guardian Address" SortExpression="guardian_address">
+                <HeaderStyle CssClass="detail-header"/>
+                <ItemStyle CssClass="detail-item"/>
+            </asp:BoundField>
+            <asp:CommandField ShowEditButton="true" EditImageUrl="~/Icon/edit.png" ButtonType="Image">
+                <ItemStyle Width="52px"></ItemStyle>
+            </asp:CommandField>                
+            <asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/Icon/rubbish.png" ButtonType="Image">
+                <ItemStyle Width="52px"></ItemStyle>
+            </asp:CommandField>                
         </Fields>
         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+        <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB" BorderStyle="None" ForeColor="White" VerticalAlign="Middle" />
         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-        <RowStyle BackColor="White" ForeColor="#003399" />
+        <RowStyle/>
     </asp:DetailsView>
-
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [matricNo], [student_name] FROM [student]"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [student] WHERE [matricNo] = @matricNo" InsertCommand="INSERT INTO [student] ([student_name], [matricNo], [phoneNo], [email], [student_IC], [address], [DOB], [gender], [race], [nationality], [guardian_name], [occupation], [guardian_phoneNo], [salary], [guardian_address]) VALUES (@student_name, @matricNo, @phoneNo, @email, @student_IC, @address, @DOB, @gender, @race, @nationality, @guardian_name, @occupation, @guardian_phoneNo, @salary, @guardian_address)" SelectCommand="SELECT * FROM [student] WHERE ([matricNo] = @matricNo)" UpdateCommand="UPDATE [student] SET [student_name] = @student_name, [phoneNo] = @phoneNo, [email] = @email, [student_IC] = @student_IC, [address] = @address, [DOB] = @DOB, [gender] = @gender, [race] = @race, [nationality] = @nationality, [guardian_name] = @guardian_name, [occupation] = @occupation, [guardian_phoneNo] = @guardian_phoneNo, [salary] = @salary, [guardian_address] = @guardian_address WHERE [matricNo] = @matricNo">
         <DeleteParameters>
@@ -90,6 +140,4 @@
             <asp:Parameter Name="matricNo" Type="String" />
         </UpdateParameters>
     </asp:SqlDataSource>
-
-
 </asp:Content>

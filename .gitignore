@@ -234,3 +234,11 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+# bin folder being ignored in the gitignore
+[Bb]in/
+
+# exclude these file
+!AjaxControlToolkit.dll 
+!CKEditor.NET.dll
+!CLRIntegration.dll
