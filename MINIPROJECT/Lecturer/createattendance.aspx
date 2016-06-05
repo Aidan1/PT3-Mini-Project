@@ -2,34 +2,40 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
 
      <div class="box-header with-border">
-        <h3 class="box-title">CREATE ATTENDANCE</h3>
+        <h3 class="box-title">
+         <asp:Table ID="Table1" runat="server"></asp:Table>
+         CREATE ATTENDANCE</h3>
     </div>
 
    <br />
-
-    <form action="demo_form.asp">
-        Choose Course&nbsp;
-         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="courseCode" DataValueField="courseID">
-         </asp:DropDownList>
-
-        <br />
-        <br />
-
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [courseCode], [courseID] FROM [course]"></asp:SqlDataSource>
-        Choose Subject&nbsp;
-         <asp:DropDownList ID="DropDownList2" runat="server">
-         </asp:DropDownList>
-    </form>
-
-    <br />
-    <br />
-
-     Choose Section
-         <asp:DropDownList ID="DropDownList3" runat="server">
-         </asp:DropDownList>
-   <br />
-
-    <br />
+    <asp:Table ID="Table2" runat="server" CssClass="header-center" Width="100%" BackColor="#3b8cbb" BorderColor="#3b8cbb" BorderStyle="None">
+        <asp:TableHeaderRow ForeColor="White">
+            <asp:TableHeaderCell CssClass="header-center">
+                Choose Course
+            </asp:TableHeaderCell>
+            <asp:TableHeaderCell CssClass="header-center">
+                Choose Subject
+            </asp:TableHeaderCell>
+            <asp:TableHeaderCell CssClass="header-center">
+                Choose Section
+            </asp:TableHeaderCell>
+        </asp:TableHeaderRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="courseCode" DataValueField="courseID">
+                </asp:DropDownList>
+            </asp:TableCell>
+            <asp:TableCell>
+                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [courseCode], [courseID] FROM [course]"></asp:SqlDataSource>
+                 <asp:DropDownList ID="DropDownList2" runat="server">
+                 </asp:DropDownList>
+            </asp:TableCell>
+            <asp:TableCell>
+                  <asp:DropDownList ID="DropDownList3" runat="server">
+                  </asp:DropDownList>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
 
      Date&nbsp;
      <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
