@@ -81,6 +81,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -248,6 +249,11 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="eCampus.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>eCampus.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -309,6 +315,11 @@
       <DependentUpon>studentReg.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\DBHelper.cs" />
+    <Compile Include="eCampus.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eCampus.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Home\HomeMasterPage.Master.cs">
       <DependentUpon>HomeMasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -395,6 +406,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="eCampus.dbml.layout">
+      <DependentUpon>eCampus.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
