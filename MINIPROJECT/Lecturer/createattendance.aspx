@@ -1,12 +1,75 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Lecturer/LecturerMasterPage.Master" AutoEventWireup="true" CodeBehind="createattendance.aspx.cs" Inherits="MINIPROJECT.Lecturer.createattendance" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
+    <style>
+   /*Calendar Control CSS*/
+    .cal_Theme1 .ajax__calendar_container   {
+    background-color: #DEF1F4;
+    border:solid 1px #77D5F7;
+    }
 
+    .cal_Theme1 .ajax__calendar_header  {
+    background-color: #ffffff;
+    margin-bottom: 4px;
+    }
+
+    .cal_Theme1 .ajax__calendar_title,
+    .cal_Theme1 .ajax__calendar_next,
+    .cal_Theme1 .ajax__calendar_prev    {
+    color: #004080;
+    padding-top: 4px;
+    }
+
+    .cal_Theme1 .ajax__calendar_body    {
+    background-color: #ffffff;
+    border: solid 1px #77D5F7;
+    }
+
+    .cal_Theme1 .ajax__calendar_dayname {
+    text-align:center;
+    font-weight:bold;
+    margin-bottom: 4px;
+    margin-top: 2px;
+    color: #004080;
+    }
+
+    .cal_Theme1 .ajax__calendar_day {
+    color: #004080;
+    text-align:center;
+    }
+
+    .cal_Theme1 .ajax__calendar_hover .ajax__calendar_day,
+    .cal_Theme1 .ajax__calendar_hover .ajax__calendar_month,
+    .cal_Theme1 .ajax__calendar_hover .ajax__calendar_year,
+    .cal_Theme1 .ajax__calendar_active  {
+    color: #004080;
+    font-weight: bold;
+    background-color: #DEF1F4;
+    }
+
+    .cal_Theme1 .ajax__calendar_today   {
+    font-weight:bold;
+    }
+
+    .cal_Theme1 .ajax__calendar_other,
+    .cal_Theme1 .ajax__calendar_hover .ajax__calendar_today,
+    .cal_Theme1 .ajax__calendar_hover .ajax__calendar_title {
+    color: #bbbbbb;
+    }
+    .auto-style1 {
+        height: 22px;
+        width: 169px;
+    }
+    .auto-style2 {
+        width: 169px;
+    }
+</style>
+     <ajaxToolkit:ToolkitScriptManager ID="toolkit1" runat="server"></ajaxToolkit:ToolkitScriptManager>
      <div class="box-header with-border">
         <h3 class="box-title">
          <asp:Table ID="Table1" runat="server"></asp:Table>
          CREATE ATTENDANCE</h3>
     </div>
-
    <br />
     <asp:Table ID="Table2" runat="server" CssClass="header-center" Width="100%" BackColor="#3b8cbb" BorderColor="#3b8cbb" BorderStyle="None">
         <asp:TableHeaderRow ForeColor="White">
@@ -18,6 +81,9 @@
             </asp:TableHeaderCell>
             <asp:TableHeaderCell CssClass="header-center">
                 Choose Section
+            </asp:TableHeaderCell>
+            <asp:TableHeaderCell CssClass="header-center">
+                Pick a Date
             </asp:TableHeaderCell>
         </asp:TableHeaderRow>
         <asp:TableRow>
@@ -34,27 +100,13 @@
                   <asp:DropDownList ID="DropDownList3" runat="server">
                   </asp:DropDownList>
             </asp:TableCell>
+            <asp:TableCell>
+                 <asp:TextBox ID="TextBoxDateOfBirth" runat="server" Height="23px" Width="165px"></asp:TextBox>
+                 <asp:ImageButton runat="server" ID="img" ImageUrl="~/Admin/images/calendar.jpg" height="32px" width="38px"/>
+                 <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBoxDateOfBirth" PopupButtonID="img" Format="dd/MM/yyyy" CssClass= " cal_Theme1"/>        
+            </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-
-     Date&nbsp;
-     <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
-         <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
-         <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
-         <OtherMonthDayStyle ForeColor="#999999" />
-         <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-         <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
-         <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
-         <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
-         <WeekendDayStyle BackColor="#CCCCFF" />
-     </asp:Calendar>
-
-
-
-     <br />
-
-
-
      <br />
      <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
          <AlternatingRowStyle BackColor="White" />
@@ -68,15 +120,4 @@
          <SortedDescendingCellStyle BackColor="#FCF6C0" />
          <SortedDescendingHeaderStyle BackColor="#820000" />
      </asp:GridView>
-
-
-
-     <br />
-     <br />
-     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="SAVE" Width="93px" />
-     <br />
-     <br />
-
-
-
 </asp:Content>
