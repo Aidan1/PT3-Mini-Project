@@ -1,82 +1,154 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Lecturer/LecturerMasterPage.Master" AutoEventWireup="true" CodeBehind="createattendance.aspx.cs" Inherits="MINIPROJECT.Lecturer.createattendance" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
+    <style>
+        /*Calendar Control CSS*/
+        .cal_Theme1 .ajax__calendar_container {
+            background-color: #DEF1F4;
+            border:solid 1px #77D5F7;
+        }
 
-     <div class="box-header with-border">
-        <h3 class="box-title">
-         <asp:Table ID="Table1" runat="server"></asp:Table>
-         CREATE ATTENDANCE</h3>
+        .cal_Theme1 .ajax__calendar_header  {
+            background-color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .cal_Theme1 .ajax__calendar_title,
+        .cal_Theme1 .ajax__calendar_next,
+        .cal_Theme1 .ajax__calendar_prev    {
+            color: #004080;
+            padding-top: 4px;
+        }
+
+        .cal_Theme1 .ajax__calendar_body    {
+            background-color: #ffffff;
+            border: solid 1px #77D5F7;
+        }
+
+        .cal_Theme1 .ajax__calendar_dayname {
+            text-align:center;
+            font-weight:bold;
+            margin-bottom: 4px;
+            margin-top: 2px;
+            color: #004080;
+        }
+
+        .cal_Theme1 .ajax__calendar_day {
+            color: #004080;
+            text-align:center;
+        }
+
+        .cal_Theme1 .ajax__calendar_hover .ajax__calendar_day,
+        .cal_Theme1 .ajax__calendar_hover .ajax__calendar_month,
+        .cal_Theme1 .ajax__calendar_hover .ajax__calendar_year,
+        .cal_Theme1 .ajax__calendar_active  {
+            color: #004080;
+            font-weight: bold;
+            background-color: #DEF1F4;
+        }
+
+        .cal_Theme1 .ajax__calendar_today   {
+            font-weight:bold;
+        }
+
+        .cal_Theme1 .ajax__calendar_other,
+        .cal_Theme1 .ajax__calendar_hover .ajax__calendar_today,
+        .cal_Theme1 .ajax__calendar_hover .ajax__calendar_title {
+            color: #bbbbbb;
+        }
+        .auto-style1 {
+            height: 22px;
+            width: 169px;
+        }
+        .auto-style2 {
+            width: 169px;
+        }
+        .header-center{
+            text-align:center;
+        }
+        .padding{
+            padding:10px;
+        }
+    </style>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Create Attendance</h3>
+        </div>
+        <div class="panel-body">
+            <ajaxToolkit:ToolkitScriptManager ID="toolkit1" runat="server"></ajaxToolkit:ToolkitScriptManager>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>Course Code</td>
+                        <td>Course ID</td>
+                        <td>Section Course</td>
+                        <td>Pick a Date</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-md-3">
+                            <asp:DropDownList AppendDataBoundItems="true" Width="100%" Height="30px" ID="DropDownList1" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server" DataSourceID="SqlDataSource1" DataTextField="courseCode" DataValueField="courseCode">
+                            <asp:ListItem Text="Choose Course Code"></asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                        <td class="col-md-2">
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [courseCode] FROM [course]"></asp:SqlDataSource>
+                            <asp:DropDownList AutoPostBack="true" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="100%" Height="30px" ID="DropDownList2" runat="server">
+                            </asp:DropDownList>
+                        </td>
+                        <td class="col-md-2">
+                            <asp:DropDownList Width="100%" Height="30px" ID="DropDownList3" AutoPostBack="true" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" runat="server">
+                            </asp:DropDownList>
+                        </td>
+                        <td class="col-md-2">
+                            <asp:TextBox Width="100%" Height="30px" ID="TextBoxDateOfBirth" runat="server"></asp:TextBox>
+                        </td>
+                        <td class="col-md-2">
+                            <asp:ImageButton runat="server" ID="img" ImageUrl="~/Lecturer/Icons/calendar.png" height="30px" width="30px"/>
+                            <ajaxToolkit:CalendarExtender ID="CalendarExtender" runat="server" TargetControlID="TextBoxDateOfBirth" PopupButtonID="img" CssClass="cal_Theme1"/>
+                        </td>
+                        <td class="col-md-1">
+                            <asp:Button runat="server" Text="Save" CssClass="btn btn-success btn-block" ID="createAtt" Width="100%" OnClick="createAtt_Click"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <asp:GridView ID="GridView1" CssClass="table table-hover" AutoGenerateColumns="false" runat="server" Width="100%" DataKeyNames="matricNo" EmptyDataText="No student list">
+                <Columns>
+                    <asp:TemplateField HeaderText="Matric No" HeaderStyle-CssClass="header-center">
+                        <ItemTemplate>
+                            <asp:Label ID="matricNoLbl" runat="server" Text='<%# Eval("matricNo") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Width="20%"></ItemStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Student Name" HeaderStyle-CssClass="header-center">
+                        <ItemTemplate>
+                            <asp:Label ID="studentNameLbl" runat="server" Text='<%# Eval("studentName") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Width="60%"></ItemStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Attendance" HeaderStyle-CssClass="header-center">
+                        <ItemTemplate>
+                            <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
+                                <asp:ListItem Value="1">
+                                    Present
+                                </asp:ListItem>
+                                <asp:ListItem Value="0">
+                                    Absence
+                                </asp:ListItem>
+                                <asp:ListItem Value="2">
+                                    Late
+                                </asp:ListItem>
+                            </asp:RadioButtonList>
+                        </ItemTemplate>
+                        <ItemStyle Width="20%"></ItemStyle>
+                    </asp:TemplateField>
+                </Columns>
+                <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB" BorderStyle="None" ForeColor="White" VerticalAlign="Middle"></HeaderStyle>
+                <RowStyle HorizontalAlign="Center" Height="50px" />
+            </asp:GridView>
+        </div>
     </div>
-
-   <br />
-    <asp:Table ID="Table2" runat="server" CssClass="header-center" Width="100%" BackColor="#3b8cbb" BorderColor="#3b8cbb" BorderStyle="None">
-        <asp:TableHeaderRow ForeColor="White">
-            <asp:TableHeaderCell CssClass="header-center">
-                Choose Course
-            </asp:TableHeaderCell>
-            <asp:TableHeaderCell CssClass="header-center">
-                Choose Subject
-            </asp:TableHeaderCell>
-            <asp:TableHeaderCell CssClass="header-center">
-                Choose Section
-            </asp:TableHeaderCell>
-        </asp:TableHeaderRow>
-        <asp:TableRow>
-            <asp:TableCell>
-                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="courseCode" DataValueField="courseID">
-                </asp:DropDownList>
-            </asp:TableCell>
-            <asp:TableCell>
-                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [courseCode], [courseID] FROM [course]"></asp:SqlDataSource>
-                 <asp:DropDownList ID="DropDownList2" runat="server">
-                 </asp:DropDownList>
-            </asp:TableCell>
-            <asp:TableCell>
-                  <asp:DropDownList ID="DropDownList3" runat="server">
-                  </asp:DropDownList>
-            </asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
-
-     Date&nbsp;
-     <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
-         <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
-         <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
-         <OtherMonthDayStyle ForeColor="#999999" />
-         <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-         <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
-         <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
-         <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
-         <WeekendDayStyle BackColor="#CCCCFF" />
-     </asp:Calendar>
-
-
-
-     <br />
-
-
-
-     <br />
-     <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
-         <AlternatingRowStyle BackColor="White" />
-         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-         <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-         <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-         <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-         <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-         <SortedAscendingCellStyle BackColor="#FDF5AC" />
-         <SortedAscendingHeaderStyle BackColor="#4D0000" />
-         <SortedDescendingCellStyle BackColor="#FCF6C0" />
-         <SortedDescendingHeaderStyle BackColor="#820000" />
-     </asp:GridView>
-
-
-
-     <br />
-     <br />
-     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="SAVE" Width="93px" />
-     <br />
-     <br />
-
-
-
 </asp:Content>
