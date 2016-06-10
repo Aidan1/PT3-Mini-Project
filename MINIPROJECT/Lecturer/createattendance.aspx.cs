@@ -11,8 +11,9 @@ namespace MINIPROJECT.Lecturer
 {
     public partial class createattendance : System.Web.UI.Page
     {
-        public int matricNo { get; set; }
+        public string matricNo { get; set; }
         public int atttendace { get; set; }
+        public string comment { get; set; }
         List<createattendance> student = new List<createattendance>();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -77,15 +78,18 @@ namespace MINIPROJECT.Lecturer
         }
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RadioButtonList radio = sender as RadioButtonList;
-            GridViewRow gridRow = radio.NamingContainer as GridViewRow;
+            RadioButtonList radio = (RadioButtonList)sender;
+            GridViewRow gr = radio.NamingContainer as GridViewRow;
+            TextBox txt = (TextBox)GridView1.Rows[gr.RowIndex].FindControl("TextBoxComment");
 
-            int matricNo = (int)GridView1.DataKeys[gridRow.RowIndex].Value;
+            string matric = GridView1.DataKeys[gr.RowIndex].Value.ToString();
             int selectedValue = int.Parse(radio.SelectedValue);
-            listAdd(matricNo, selectedValue);
+            string comment = txt.Text;
+
+            listAdd(matric, selectedValue, comment);
         }
 
-        protected void listAdd(int m, int r)
+        protected void listAdd(string m, int r, string c)
         {
 
             if(student.Contains(new createattendance { matricNo = m}) == true)
@@ -94,7 +98,7 @@ namespace MINIPROJECT.Lecturer
             }
             else
             {
-                student.Add(new createattendance() { matricNo = m, atttendace = r });
+                student.Add(new createattendance() { matricNo = m, atttendace = r, comment = c});
             }
         }
 
@@ -110,47 +114,47 @@ namespace MINIPROJECT.Lecturer
             int cid = Convert.ToInt32(DropDownList2.SelectedValue);
             int ssid = Convert.ToInt32(DropDownList3.SelectedValue);
 
-            SqlCommand cmd = new SqlCommand("GetSemesterID", conn);
+            SqlCommand cmd = new SqlCommand("SetAttendanceDate", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@ccode", ccode));
-            cmd.Parameters.Add(new SqlParameter("@courseID", cid));
-            cmd.Parameters.Add("@semesterID", SqlDbType.Int);
-            cmd.Parameters["@semesterID"].Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(new SqlParameter("@date", date));
+            cmd.Parameters.Add("@dateID", SqlDbType.Int);
+            cmd.Parameters["@dateID"].Direction = ParameterDirection.Output;
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
 
-            int semesterID = Convert.ToInt32(cmd.Parameters["@semesterID"].Value);
+            int dateID = Convert.ToInt32(cmd.Parameters["@dateID"].Value);
 
-            SqlCommand cmd2 = new SqlCommand("SetAttendanceDate", conn);
+            SqlCommand cmd2 = new SqlCommand("SetAttendance", conn);
             cmd2.CommandType = CommandType.StoredProcedure;
-            cmd2.Parameters.Add(new SqlParameter("@date", date));
-            cmd2.Parameters.Add("@dateID", SqlDbType.Int);
-            cmd2.Parameters["@dateID"].Direction = ParameterDirection.Output;
+            cmd2.Parameters.Add(new SqlParameter("@ccode", ccode));
+            cmd2.Parameters.Add(new SqlParameter("@courseID", cid));
+            cmd2.Parameters.Add(new SqlParameter("@sectionID", ssid));
+            cmd2.Parameters.Add(new SqlParameter("@dateID", dateID));
+            cmd2.Parameters.Add("@attendanceID", SqlDbType.Int);
+            cmd2.Parameters["@attendanceID"].Direction = ParameterDirection.Output;
             conn.Open();
             cmd2.ExecuteNonQuery();
             conn.Close();
 
-            int dateID = Convert.ToInt32(cmd2.Parameters["@dateID"].Value);
+            int attendanceID = Convert.ToInt32(cmd2.Parameters["@attendanceID"].Value);
 
-            SqlCommand cmd3 = new SqlCommand("SetAttendance", conn);
+            SqlCommand cmd3 = new SqlCommand("SetAttendanceStatus", conn);
             cmd3.CommandType = CommandType.StoredProcedure;
-            cmd3.Parameters.Add(new SqlParameter("@ccode", ccode));
-            cmd3.Parameters.Add(new SqlParameter("@courseID", cid));
-            cmd3.Parameters.Add(new SqlParameter("@sectionID", ssid));
-            cmd3.Parameters.Add(new SqlParameter("@dateID", dateID));
-            cmd3.Parameters.Add(new SqlParameter("@semesterID", semesterID));
-            cmd3.Parameters["@attendanceID"].Direction = ParameterDirection.Output;
+            cmd3.Parameters.Add(new SqlParameter("@attendanceID", attendanceID));
+            cmd3.Parameters.Add(new SqlParameter("@matricNo", SqlDbType.VarChar));
+            cmd3.Parameters.Add(new SqlParameter("@status", SqlDbType.SmallInt));
+            cmd3.Parameters.Add(new SqlParameter("@comment", SqlDbType.VarChar));
             conn.Open();
-            cmd3.ExecuteNonQuery();
+            foreach (createattendance std in student)
+            {
+                System.Diagnostics.Debug.WriteLine(std.matricNo +", "+ std.atttendace +", "+ std.comment);
+                cmd3.Parameters["@matricNo"].Value = std.matricNo;
+                cmd3.Parameters["@status"].Value = std.atttendace;
+                cmd3.Parameters["@comment"].Value = std.comment;
+                cmd3.ExecuteNonQuery();
+            }
             conn.Close();
-
-            System.Diagnostics.Debug.WriteLine(cmd.Parameters["@dateID"].Value);
-/*                foreach (createattendance std in student)
-                {
-
-                }
-*/
         }
 
         private string getConnection()
