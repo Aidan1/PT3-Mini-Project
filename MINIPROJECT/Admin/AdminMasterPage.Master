@@ -34,6 +34,11 @@
     
     <title>e-Campus Management System</title>
     <!-- Tell the browser to be responsive to screen width -->
+    <style>
+        .header-center{
+            text-align:center;
+        }
+    </style>
     
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
