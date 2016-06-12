@@ -7,9 +7,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace MINIPROJECT.Student
+namespace MINIPROJECT
 {
-    public partial class StudentMasterPage : System.Web.UI.MasterPage
+    public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,14 +29,24 @@ namespace MINIPROJECT.Student
                 if (dr.Read())
                 {
                     student_name.Text = dr["student_name"].ToString();
-                    student_name1.Text = dr["student_name"].ToString();
                     matricNo.Text = dr["matricNo"].ToString();
-                    gender.Text = dr["gender"].ToString();                   
+                    phoneNo.Text = dr["phoneNo"].ToString();
+                    email.Text = dr["email"].ToString();
+                    ic.Text = dr["student_IC"].ToString();
+                    address.Text = dr["address"].ToString();
+                    dob.Text = dr["DOB"].ToString();
+                    gender.Text = dr["gender"].ToString();
+                    race.Text = dr["race"].ToString();
+                    nationality.Text = dr["nationality"].ToString();
+                    guardianName.Text = dr["guardian_name"].ToString();
+                    occupation.Text = dr["occupation"].ToString();
+                    guardianPhone.Text = dr["guardian_phoneNo"].ToString();
+                    salary.Text = dr["salary"].ToString();
+                    guardianAddress.Text = dr["guardian_address"].ToString();                   
                 }
                 dr.Close();
             }
             conn.Close();
-            gender.Visible = false;
         }
 
         private string getConnection()

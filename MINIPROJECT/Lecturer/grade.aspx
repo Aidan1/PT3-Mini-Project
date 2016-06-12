@@ -24,6 +24,7 @@
                                 <td>Course Code</td>
                                 <td>Course ID</td>
                                 <td>Section Course</td>
+                                <td>Student</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,12 +34,15 @@
                                         <asp:ListItem Text="Choose Course Code"></asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
-                                <td class="col-md-3">
+                                <td class="col-md-2">
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [courseCode] FROM [course]"></asp:SqlDataSource>
                                     <asp:DropDownList Width="100%" Height="30px" ID="DropDownList2" AutoPostBack="true" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" runat="server"></asp:DropDownList>
                                 </td>
+                                <td class="col-md-2">
+                                    <asp:DropDownList Width="100%" Height="30px" ID="DropDownList3" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged"></asp:DropDownList>
+                                </td>
                                 <td class="col-md-3">
-                                    <asp:DropDownList Width="100%" Height="30px" ID="DropDownList3" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList Width="100%" Height="30px" ID="DropDownList4" runat="server"></asp:DropDownList>
                                 </td>
                             </tr>
                         </tbody>
@@ -60,130 +64,114 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <asp:TextBox runat="server" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:DropDownList ID="assignDD" AppendDataBoundItems="true" Width="100%" Height="30px" runat="server" AutoPostBack="true">
-                                        <asp:ListItem Text="Pick Number of Assignment"></asp:ListItem>
-                                        <asp:ListItem Text="0" Value="0"></asp:ListItem>
-                                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                        <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                        <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                        <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="a1" CssClass="form-control" placeholder=" Assignment 1 " runat="server" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="quizDD" AppendDataBoundItems="true" Width="100%" Height="30px" runat="server" AutoPostBack="true">
-                                        <asp:ListItem Text="Pick Number of Quiz"></asp:ListItem>
-                                        <asp:ListItem Text="0" Value="0"></asp:ListItem>
-                                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                        <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                        <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                        <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="q1" CssClass="form-control" placeholder=" Quiz 1 " runat="server" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="projectDD" AppendDataBoundItems="true" Width="100%" Height="30px" runat="server" AutoPostBack="true">
-                                        <asp:ListItem Text="Pick Number of Project"></asp:ListItem>
-                                        <asp:ListItem Text="0" Value="0"></asp:ListItem>
-                                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                        <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                        <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                        <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="p1" CssClass="form-control" placeholder=" Project 1 " runat="server" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="labDD" AppendDataBoundItems="true" Width="100%" Height="30px" runat="server" AutoPostBack="true">
-                                        <asp:ListItem Text="Pick Number of Lab"></asp:ListItem>
-                                        <asp:ListItem Text="0" Value="0"></asp:ListItem>
-                                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                        <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                        <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                        <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="l1" CssClass="form-control" placeholder=" Lab 1 " runat="server" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
-                                <td></td>
                                 <td>
-                                    <asp:Button ID="sumbitBtn" runat="server" CssClass="btn btn-success" Text="Done" Width="100%" Height="30px" OnClick="sumbitBtn_Click"/>
+                                    <asp:TextBox ID="mt" CssClass="form-control" placeholder=" Mid Term " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="f" CssClass="form-control" placeholder=" Final " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="a2" CssClass="form-control" placeholder=" Assignment 2 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="q2" CssClass="form-control" placeholder=" Quiz 2 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="p2" CssClass="form-control" placeholder=" Project 2 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="l2" CssClass="form-control" placeholder=" Lab 2 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="a3" CssClass="form-control" placeholder=" Assignment 3 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="q3" CssClass="form-control" placeholder=" Quiz 3 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="p3" CssClass="form-control" placeholder=" Project 3 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="l3" CssClass="form-control" placeholder=" Lab 3 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="a4" CssClass="form-control" placeholder=" Assignment 4 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="q4" CssClass="form-control" placeholder=" Quiz 4 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="p4" CssClass="form-control" placeholder=" Project 4 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="l4" CssClass="form-control" placeholder=" Lab 4 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="a5" CssClass="form-control" placeholder=" Assignment 5 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="q5" CssClass="form-control" placeholder=" Quiz 5 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="p5" CssClass="form-control" placeholder=" Project 5 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="l5" CssClass="form-control" placeholder=" Lab 5 " runat="server" Width="100%" Height="30px"></asp:TextBox>
                                 </td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <asp:Button runat="server" ID="submitMark" Text="Save Mark" Width="100%" Height="30px" CssClass="btn btn-success" />
+                                </td>
+                            </tr>
+                        </tfoot>
                     </table>
-                    <br />
-                    <asp:GridView ID="GridView1" runat="server" DataKeyNames="matricNo">
-                        <Columns>
-                            <asp:TemplateField HeaderText="Matric No">
-                                <ItemTemplate>
-                                    <asp:Label runat="server" Text='<%# Eval("matricNo") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Student Name">
-                                <ItemTemplate>
-                                    <asp:Label runat="server" Text='<%# Eval("studentName") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Assignment">
-                                <ItemTemplate>
-                                    <asp:Table runat="server" ID="TableA">
-                                    </asp:Table>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Quiz">
-                                <ItemTemplate>
-                                    <asp:Table runat="server" ID="TableQ">
-                                    </asp:Table>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Project">
-                                <ItemTemplate>
-                                    <asp:Table runat="server" ID="TableP">
-                                    </asp:Table>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Lab">
-                                <ItemTemplate>
-                                    <asp:Table runat="server" ID="TableL">
-                                    </asp:Table>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Mid-Term">
-                                <ItemTemplate>
-                                    <asp:Table runat="server" ID="TableMT">
-                                    </asp:Table>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Final">
-                                <ItemTemplate>
-                                    <asp:Table runat="server" ID="TableF">
-                                    </asp:Table>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
-                    <asp:Table runat="server" ID="test">
-
-                    </asp:Table>
                 </div>
             </div>
 	    </div>

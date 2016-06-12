@@ -34,12 +34,12 @@ namespace MINIPROJECT.LandingPage
                   if (viewPermission == "ADMIN")
                   {
                       Session["username"] = username;
-                      Response.Redirect("/Admin/manageCourse.aspx", true);
+                      Response.Redirect("/Admin/studentReg.aspx", true);
                   }
                   if (viewPermission == "LECTURER")
                   {
                       Session["username"] = username;
-                      Response.Redirect("/Lecturer/attendance.aspx", true);
+                      Response.Redirect("/Lecturer/createattendance.aspx", true);
                   }
                   if (viewPermission == "STUDENT")
                   {

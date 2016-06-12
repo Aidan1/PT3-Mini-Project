@@ -56,13 +56,6 @@
         .cal_Theme1 .ajax__calendar_hover .ajax__calendar_title {
             color: #bbbbbb;
         }
-        .auto-style1 {
-            height: 22px;
-            width: 169px;
-        }
-        .auto-style2 {
-            width: 169px;
-        }
         .header-center{
             text-align:center;
         }
@@ -88,7 +81,7 @@
         <div class="row">
             <div class="col-md-12 col-sm-6">
                 <div class="box">
-                    <div class="box-header with-border">
+                    <div class="box-header with-border" style="left: 0px; top: 0px">
                         <h3 class="box-title">Create Attendance</h3>
                     </div>
                     <div class="box-body">
