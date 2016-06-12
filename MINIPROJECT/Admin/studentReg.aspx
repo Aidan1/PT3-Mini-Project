@@ -179,7 +179,7 @@
                                 <br />
                              </td>
                              <td>
-                                 <div>                       
+                                 <div>
                                  <asp:TextBox ID="TextBoxDateOfBirth" runat="server" Height="23px" Width="165px"></asp:TextBox>
                                  <asp:ImageButton runat="server" ID="img" ImageUrl="images/calendar.jpg" height="32px" width="38px"/>
                                  <ajaxToolkit:CalendarExtender ID="Calendar1" runat="server" TargetControlID="TextBoxDateOfBirth" PopupButtonID="img" Format="dd/MM/yyyy" CssClass= " cal_Theme1"/>                            

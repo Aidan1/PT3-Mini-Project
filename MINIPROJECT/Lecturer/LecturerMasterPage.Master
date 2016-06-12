@@ -31,11 +31,6 @@
     <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker-bs3.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-      <style>
-          .header-center{
-              text-align:center;
-          }
-      </style>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -86,36 +81,17 @@
           </div>
         </nav>
       </header>
-      <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-          <!-- /.search form -->
-          <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-
-            <li class="header">MAIN NAVIGATION</li>
-
-            <li><a href="attendance.aspx"><i class="fa fa-book"></i> <span>Attendance</span></a></li>
-              <ul class="menu">
-
-                <li><a href="createattendance.aspx">Create Attendance</a></li>
-                <li><a href="listattendance.aspx">List Attendance</a></li>
-                    <!-- ... -->
-               </ul>     
-
-              <li><a href="grade.aspx"><i class="fa fa-book"></i> <span>Grade</span></a></li>
-              <ul class="menu">
-
-                <li><a href="listgrade.aspx">List Grade</a></li>
-                    <!-- ... -->
-               </ul>     
-
-          </ul>
+            <li><a href="dashboard.aspx"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+            <li><a href="attendance.aspx"><i class="fa fa-list"></i><span>Attendance</span></a></li>
+            <li><a href="createattendance.aspx"><i class="fa fa-plus-square"></i><span>Create Attendance</span></a></li>
+            <li><a href="listattendance.aspx"><i class="fa fa-list"></i><span>Attendance List</span></a></li>
+            <li><a href="grade.aspx"><i class="fa fa-check-square"></i><span>Grade</span></a></li>
+            <li><a href="listgrade.aspx"><i class="fa fa-list"></i><span>Grade List</span></a></li>
         </section>
-        <!-- /.sidebar -->
-      </aside>
-
+      </aside>-->
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
 

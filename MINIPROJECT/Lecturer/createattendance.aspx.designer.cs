@@ -22,24 +22,6 @@ namespace MINIPROJECT.Lecturer {
         protected global::AjaxControlToolkit.ToolkitScriptManager toolkit1;
         
         /// <summary>
-        /// Table1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
-        
-        /// <summary>
-        /// Table2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table2;
-        
-        /// <summary>
         /// DropDownList1 control.
         /// </summary>
         /// <remarks>
@@ -94,13 +76,22 @@ namespace MINIPROJECT.Lecturer {
         protected global::System.Web.UI.WebControls.ImageButton img;
         
         /// <summary>
-        /// CalendarExtender1 control.
+        /// CalendarExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender;
+        
+        /// <summary>
+        /// createAtt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button createAtt;
         
         /// <summary>
         /// GridView1 control.
