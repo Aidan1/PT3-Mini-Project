@@ -57,6 +57,15 @@ namespace MINIPROJECT
     partial void Insertsection(section instance);
     partial void Updatesection(section instance);
     partial void Deletesection(section instance);
+    partial void Insertattendance(attendance instance);
+    partial void Updateattendance(attendance instance);
+    partial void Deleteattendance(attendance instance);
+    partial void Insertattendance_date(attendance_date instance);
+    partial void Updateattendance_date(attendance_date instance);
+    partial void Deleteattendance_date(attendance_date instance);
+    partial void Insertattendance_status(attendance_status instance);
+    partial void Updateattendance_status(attendance_status instance);
+    partial void Deleteattendance_status(attendance_status instance);
     #endregion
 		
 		public eCampusDataContext() : 
@@ -158,6 +167,30 @@ namespace MINIPROJECT
 			get
 			{
 				return this.GetTable<section>();
+			}
+		}
+		
+		public System.Data.Linq.Table<attendance> attendances
+		{
+			get
+			{
+				return this.GetTable<attendance>();
+			}
+		}
+		
+		public System.Data.Linq.Table<attendance_date> attendance_dates
+		{
+			get
+			{
+				return this.GetTable<attendance_date>();
+			}
+		}
+		
+		public System.Data.Linq.Table<attendance_status> attendance_status
+		{
+			get
+			{
+				return this.GetTable<attendance_status>();
 			}
 		}
 	}
@@ -839,6 +872,8 @@ namespace MINIPROJECT
 		
 		private EntitySet<section> _sections;
 		
+		private EntitySet<attendance> _attendances;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -862,6 +897,7 @@ namespace MINIPROJECT
 			this._student_sections = new EntitySet<student_section>(new Action<student_section>(this.attach_student_sections), new Action<student_section>(this.detach_student_sections));
 			this._course_sections = new EntitySet<course_section>(new Action<course_section>(this.attach_course_sections), new Action<course_section>(this.detach_course_sections));
 			this._sections = new EntitySet<section>(new Action<section>(this.attach_sections), new Action<section>(this.detach_sections));
+			this._attendances = new EntitySet<attendance>(new Action<attendance>(this.attach_attendances), new Action<attendance>(this.detach_attendances));
 			OnCreated();
 		}
 		
@@ -1030,6 +1066,19 @@ namespace MINIPROJECT
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="course_attendance", Storage="_attendances", ThisKey="courseCode,courseID", OtherKey="courseCode,courseID")]
+		public EntitySet<attendance> attendances
+		{
+			get
+			{
+				return this._attendances;
+			}
+			set
+			{
+				this._attendances.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1105,6 +1154,18 @@ namespace MINIPROJECT
 		}
 		
 		private void detach_sections(section entity)
+		{
+			this.SendPropertyChanging();
+			entity.course = null;
+		}
+		
+		private void attach_attendances(attendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.course = this;
+		}
+		
+		private void detach_attendances(attendance entity)
 		{
 			this.SendPropertyChanging();
 			entity.course = null;
@@ -1574,6 +1635,8 @@ namespace MINIPROJECT
 		
 		private EntitySet<student_section> _student_sections;
 		
+		private EntitySet<attendance_status> _attendance_status;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1613,6 +1676,7 @@ namespace MINIPROJECT
 		public student()
 		{
 			this._student_sections = new EntitySet<student_section>(new Action<student_section>(this.attach_student_sections), new Action<student_section>(this.detach_student_sections));
+			this._attendance_status = new EntitySet<attendance_status>(new Action<attendance_status>(this.attach_attendance_status), new Action<attendance_status>(this.detach_attendance_status));
 			OnCreated();
 		}
 		
@@ -1929,6 +1993,19 @@ namespace MINIPROJECT
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="student_attendance_status", Storage="_attendance_status", ThisKey="matricNo", OtherKey="matricNo")]
+		public EntitySet<attendance_status> attendance_status
+		{
+			get
+			{
+				return this._attendance_status;
+			}
+			set
+			{
+				this._attendance_status.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1956,6 +2033,18 @@ namespace MINIPROJECT
 		}
 		
 		private void detach_student_sections(student_section entity)
+		{
+			this.SendPropertyChanging();
+			entity.student = null;
+		}
+		
+		private void attach_attendance_status(attendance_status entity)
+		{
+			this.SendPropertyChanging();
+			entity.student = this;
+		}
+		
+		private void detach_attendance_status(attendance_status entity)
 		{
 			this.SendPropertyChanging();
 			entity.student = null;
@@ -2204,6 +2293,8 @@ namespace MINIPROJECT
 		
 		private EntitySet<course_section> _course_sections;
 		
+		private EntitySet<attendance> _attendances;
+		
 		private EntityRef<course> _course;
 		
     #region Extensibility Method Definitions
@@ -2226,6 +2317,7 @@ namespace MINIPROJECT
 		{
 			this._student_sections = new EntitySet<student_section>(new Action<student_section>(this.attach_student_sections), new Action<student_section>(this.detach_student_sections));
 			this._course_sections = new EntitySet<course_section>(new Action<course_section>(this.attach_course_sections), new Action<course_section>(this.detach_course_sections));
+			this._attendances = new EntitySet<attendance>(new Action<attendance>(this.attach_attendances), new Action<attendance>(this.detach_attendances));
 			this._course = default(EntityRef<course>);
 			OnCreated();
 		}
@@ -2364,6 +2456,19 @@ namespace MINIPROJECT
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="section_attendance", Storage="_attendances", ThisKey="sectionID", OtherKey="sectionID")]
+		public EntitySet<attendance> attendances
+		{
+			get
+			{
+				return this._attendances;
+			}
+			set
+			{
+				this._attendances.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="course_section", Storage="_course", ThisKey="courseCode,courseID", OtherKey="courseCode,courseID", IsForeignKey=true)]
 		public course course
 		{
@@ -2442,6 +2547,687 @@ namespace MINIPROJECT
 		{
 			this.SendPropertyChanging();
 			entity.section = null;
+		}
+		
+		private void attach_attendances(attendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.section = this;
+		}
+		
+		private void detach_attendances(attendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.section = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.attendance")]
+	public partial class attendance : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _attendanceID;
+		
+		private string _courseCode;
+		
+		private int _courseID;
+		
+		private int _sectionID;
+		
+		private int _dateID;
+		
+		private EntitySet<attendance_status> _attendance_status;
+		
+		private EntityRef<section> _section;
+		
+		private EntityRef<course> _course;
+		
+		private EntityRef<attendance_date> _attendance_date;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnattendanceIDChanging(int value);
+    partial void OnattendanceIDChanged();
+    partial void OncourseCodeChanging(string value);
+    partial void OncourseCodeChanged();
+    partial void OncourseIDChanging(int value);
+    partial void OncourseIDChanged();
+    partial void OnsectionIDChanging(int value);
+    partial void OnsectionIDChanged();
+    partial void OndateIDChanging(int value);
+    partial void OndateIDChanged();
+    #endregion
+		
+		public attendance()
+		{
+			this._attendance_status = new EntitySet<attendance_status>(new Action<attendance_status>(this.attach_attendance_status), new Action<attendance_status>(this.detach_attendance_status));
+			this._section = default(EntityRef<section>);
+			this._course = default(EntityRef<course>);
+			this._attendance_date = default(EntityRef<attendance_date>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attendanceID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int attendanceID
+		{
+			get
+			{
+				return this._attendanceID;
+			}
+			set
+			{
+				if ((this._attendanceID != value))
+				{
+					this.OnattendanceIDChanging(value);
+					this.SendPropertyChanging();
+					this._attendanceID = value;
+					this.SendPropertyChanged("attendanceID");
+					this.OnattendanceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_courseCode", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string courseCode
+		{
+			get
+			{
+				return this._courseCode;
+			}
+			set
+			{
+				if ((this._courseCode != value))
+				{
+					if (this._course.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OncourseCodeChanging(value);
+					this.SendPropertyChanging();
+					this._courseCode = value;
+					this.SendPropertyChanged("courseCode");
+					this.OncourseCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_courseID", DbType="Int NOT NULL")]
+		public int courseID
+		{
+			get
+			{
+				return this._courseID;
+			}
+			set
+			{
+				if ((this._courseID != value))
+				{
+					if (this._course.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OncourseIDChanging(value);
+					this.SendPropertyChanging();
+					this._courseID = value;
+					this.SendPropertyChanged("courseID");
+					this.OncourseIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sectionID", DbType="Int NOT NULL")]
+		public int sectionID
+		{
+			get
+			{
+				return this._sectionID;
+			}
+			set
+			{
+				if ((this._sectionID != value))
+				{
+					if (this._section.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnsectionIDChanging(value);
+					this.SendPropertyChanging();
+					this._sectionID = value;
+					this.SendPropertyChanged("sectionID");
+					this.OnsectionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateID", DbType="Int NOT NULL")]
+		public int dateID
+		{
+			get
+			{
+				return this._dateID;
+			}
+			set
+			{
+				if ((this._dateID != value))
+				{
+					if (this._attendance_date.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OndateIDChanging(value);
+					this.SendPropertyChanging();
+					this._dateID = value;
+					this.SendPropertyChanged("dateID");
+					this.OndateIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attendance_attendance_status", Storage="_attendance_status", ThisKey="attendanceID", OtherKey="attendanceID")]
+		public EntitySet<attendance_status> attendance_status
+		{
+			get
+			{
+				return this._attendance_status;
+			}
+			set
+			{
+				this._attendance_status.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="section_attendance", Storage="_section", ThisKey="sectionID", OtherKey="sectionID", IsForeignKey=true)]
+		public section section
+		{
+			get
+			{
+				return this._section.Entity;
+			}
+			set
+			{
+				section previousValue = this._section.Entity;
+				if (((previousValue != value) 
+							|| (this._section.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._section.Entity = null;
+						previousValue.attendances.Remove(this);
+					}
+					this._section.Entity = value;
+					if ((value != null))
+					{
+						value.attendances.Add(this);
+						this._sectionID = value.sectionID;
+					}
+					else
+					{
+						this._sectionID = default(int);
+					}
+					this.SendPropertyChanged("section");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="course_attendance", Storage="_course", ThisKey="courseCode,courseID", OtherKey="courseCode,courseID", IsForeignKey=true)]
+		public course course
+		{
+			get
+			{
+				return this._course.Entity;
+			}
+			set
+			{
+				course previousValue = this._course.Entity;
+				if (((previousValue != value) 
+							|| (this._course.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._course.Entity = null;
+						previousValue.attendances.Remove(this);
+					}
+					this._course.Entity = value;
+					if ((value != null))
+					{
+						value.attendances.Add(this);
+						this._courseCode = value.courseCode;
+						this._courseID = value.courseID;
+					}
+					else
+					{
+						this._courseCode = default(string);
+						this._courseID = default(int);
+					}
+					this.SendPropertyChanged("course");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attendance_date_attendance", Storage="_attendance_date", ThisKey="dateID", OtherKey="dateID", IsForeignKey=true)]
+		public attendance_date attendance_date
+		{
+			get
+			{
+				return this._attendance_date.Entity;
+			}
+			set
+			{
+				attendance_date previousValue = this._attendance_date.Entity;
+				if (((previousValue != value) 
+							|| (this._attendance_date.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._attendance_date.Entity = null;
+						previousValue.attendances.Remove(this);
+					}
+					this._attendance_date.Entity = value;
+					if ((value != null))
+					{
+						value.attendances.Add(this);
+						this._dateID = value.dateID;
+					}
+					else
+					{
+						this._dateID = default(int);
+					}
+					this.SendPropertyChanged("attendance_date");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_attendance_status(attendance_status entity)
+		{
+			this.SendPropertyChanging();
+			entity.attendance = this;
+		}
+		
+		private void detach_attendance_status(attendance_status entity)
+		{
+			this.SendPropertyChanging();
+			entity.attendance = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.attendance_date")]
+	public partial class attendance_date : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _dateID;
+		
+		private System.DateTime _date;
+		
+		private EntitySet<attendance> _attendances;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OndateIDChanging(int value);
+    partial void OndateIDChanged();
+    partial void OndateChanging(System.DateTime value);
+    partial void OndateChanged();
+    #endregion
+		
+		public attendance_date()
+		{
+			this._attendances = new EntitySet<attendance>(new Action<attendance>(this.attach_attendances), new Action<attendance>(this.detach_attendances));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int dateID
+		{
+			get
+			{
+				return this._dateID;
+			}
+			set
+			{
+				if ((this._dateID != value))
+				{
+					this.OndateIDChanging(value);
+					this.SendPropertyChanging();
+					this._dateID = value;
+					this.SendPropertyChanged("dateID");
+					this.OndateIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date NOT NULL")]
+		public System.DateTime date
+		{
+			get
+			{
+				return this._date;
+			}
+			set
+			{
+				if ((this._date != value))
+				{
+					this.OndateChanging(value);
+					this.SendPropertyChanging();
+					this._date = value;
+					this.SendPropertyChanged("date");
+					this.OndateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attendance_date_attendance", Storage="_attendances", ThisKey="dateID", OtherKey="dateID")]
+		public EntitySet<attendance> attendances
+		{
+			get
+			{
+				return this._attendances;
+			}
+			set
+			{
+				this._attendances.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_attendances(attendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.attendance_date = this;
+		}
+		
+		private void detach_attendances(attendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.attendance_date = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.attendance_status")]
+	public partial class attendance_status : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _uID;
+		
+		private int _attendanceID;
+		
+		private string _matricNo;
+		
+		private short _status;
+		
+		private string _comment;
+		
+		private EntityRef<attendance> _attendance;
+		
+		private EntityRef<student> _student;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnuIDChanging(int value);
+    partial void OnuIDChanged();
+    partial void OnattendanceIDChanging(int value);
+    partial void OnattendanceIDChanged();
+    partial void OnmatricNoChanging(string value);
+    partial void OnmatricNoChanged();
+    partial void OnstatusChanging(short value);
+    partial void OnstatusChanged();
+    partial void OncommentChanging(string value);
+    partial void OncommentChanged();
+    #endregion
+		
+		public attendance_status()
+		{
+			this._attendance = default(EntityRef<attendance>);
+			this._student = default(EntityRef<student>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int uID
+		{
+			get
+			{
+				return this._uID;
+			}
+			set
+			{
+				if ((this._uID != value))
+				{
+					this.OnuIDChanging(value);
+					this.SendPropertyChanging();
+					this._uID = value;
+					this.SendPropertyChanged("uID");
+					this.OnuIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attendanceID", DbType="Int NOT NULL")]
+		public int attendanceID
+		{
+			get
+			{
+				return this._attendanceID;
+			}
+			set
+			{
+				if ((this._attendanceID != value))
+				{
+					if (this._attendance.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnattendanceIDChanging(value);
+					this.SendPropertyChanging();
+					this._attendanceID = value;
+					this.SendPropertyChanged("attendanceID");
+					this.OnattendanceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_matricNo", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string matricNo
+		{
+			get
+			{
+				return this._matricNo;
+			}
+			set
+			{
+				if ((this._matricNo != value))
+				{
+					if (this._student.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmatricNoChanging(value);
+					this.SendPropertyChanging();
+					this._matricNo = value;
+					this.SendPropertyChanged("matricNo");
+					this.OnmatricNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="SmallInt NOT NULL")]
+		public short status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comment", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string comment
+		{
+			get
+			{
+				return this._comment;
+			}
+			set
+			{
+				if ((this._comment != value))
+				{
+					this.OncommentChanging(value);
+					this.SendPropertyChanging();
+					this._comment = value;
+					this.SendPropertyChanged("comment");
+					this.OncommentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attendance_attendance_status", Storage="_attendance", ThisKey="attendanceID", OtherKey="attendanceID", IsForeignKey=true)]
+		public attendance attendance
+		{
+			get
+			{
+				return this._attendance.Entity;
+			}
+			set
+			{
+				attendance previousValue = this._attendance.Entity;
+				if (((previousValue != value) 
+							|| (this._attendance.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._attendance.Entity = null;
+						previousValue.attendance_status.Remove(this);
+					}
+					this._attendance.Entity = value;
+					if ((value != null))
+					{
+						value.attendance_status.Add(this);
+						this._attendanceID = value.attendanceID;
+					}
+					else
+					{
+						this._attendanceID = default(int);
+					}
+					this.SendPropertyChanged("attendance");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="student_attendance_status", Storage="_student", ThisKey="matricNo", OtherKey="matricNo", IsForeignKey=true)]
+		public student student
+		{
+			get
+			{
+				return this._student.Entity;
+			}
+			set
+			{
+				student previousValue = this._student.Entity;
+				if (((previousValue != value) 
+							|| (this._student.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._student.Entity = null;
+						previousValue.attendance_status.Remove(this);
+					}
+					this._student.Entity = value;
+					if ((value != null))
+					{
+						value.attendance_status.Add(this);
+						this._matricNo = value.matricNo;
+					}
+					else
+					{
+						this._matricNo = default(string);
+					}
+					this.SendPropertyChanged("student");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

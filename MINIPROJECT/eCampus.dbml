@@ -42,6 +42,7 @@
       <Association Name="course_student_section" Member="student_sections" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="student_section" />
       <Association Name="course_course_section" Member="course_sections" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="course_section" />
       <Association Name="course_section" Member="sections" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="section" />
+      <Association Name="course_attendance" Member="attendances" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="attendance" />
     </Type>
   </Table>
   <Table Name="dbo.year_semester" Member="year_semesters">
@@ -82,6 +83,7 @@
       <Column Name="salary" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="guardian_address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Association Name="student_student_section" Member="student_sections" ThisKey="matricNo" OtherKey="matricNo" Type="student_section" />
+      <Association Name="student_attendance_status" Member="attendance_status" ThisKey="matricNo" OtherKey="matricNo" Type="attendance_status" />
     </Type>
   </Table>
   <Table Name="dbo.course_section" Member="course_sections">
@@ -103,7 +105,39 @@
       <Column Name="sectionNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="section_student_section" Member="student_sections" ThisKey="sectionID" OtherKey="sectionID" Type="student_section" />
       <Association Name="section_course_section" Member="course_sections" ThisKey="sectionID" OtherKey="sectionID" Type="course_section" />
+      <Association Name="section_attendance" Member="attendances" ThisKey="sectionID" OtherKey="sectionID" Type="attendance" />
       <Association Name="course_section" Member="course" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.attendance" Member="attendances">
+    <Type Name="attendance">
+      <Column Name="attendanceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="courseCode" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="courseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sectionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="attendance_attendance_status" Member="attendance_status" ThisKey="attendanceID" OtherKey="attendanceID" Type="attendance_status" />
+      <Association Name="section_attendance" Member="section" ThisKey="sectionID" OtherKey="sectionID" Type="section" IsForeignKey="true" />
+      <Association Name="course_attendance" Member="course" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="course" IsForeignKey="true" />
+      <Association Name="attendance_date_attendance" Member="attendance_date" ThisKey="dateID" OtherKey="dateID" Type="attendance_date" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.attendance_date" Member="attendance_dates">
+    <Type Name="attendance_date">
+      <Column Name="dateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="attendance_date_attendance" Member="attendances" ThisKey="dateID" OtherKey="dateID" Type="attendance" />
+    </Type>
+  </Table>
+  <Table Name="dbo.attendance_status" Member="attendance_status">
+    <Type Name="attendance_status">
+      <Column Name="uID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="attendanceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="matricNo" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="attendance_attendance_status" Member="attendance" ThisKey="attendanceID" OtherKey="attendanceID" Type="attendance" IsForeignKey="true" />
+      <Association Name="student_attendance_status" Member="student" ThisKey="matricNo" OtherKey="matricNo" Type="student" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
