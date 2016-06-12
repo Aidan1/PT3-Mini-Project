@@ -36,6 +36,7 @@ namespace MINIPROJECT.Student
             {
                 var ds = from a in ctx.course_offereds
                          join b in ctx.courses on new { a.courseCode, a.courseID } equals new {b.courseCode, b.courseID}
+                         join c in ctx.sections on new { a.courseCode, a.courseID } equals new { c.courseCode, c.courseID }
                          where a.semesterID == semID 
                          select new
                          {
@@ -43,7 +44,8 @@ namespace MINIPROJECT.Student
                              courseCode = a.courseCode,
                              courseID = a.courseID,
                              courseName = b.courseName,
-                             creditHours = b.creditHours
+                             creditHours = b.creditHours,
+                             sectionNo = c.sectionNo
                          };
                 GridView1.DataSource = ds;
                 GridView1.DataBind();

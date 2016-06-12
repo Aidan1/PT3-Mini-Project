@@ -119,6 +119,12 @@
                 </ItemTemplate>
                 <ItemStyle Width="20%"></ItemStyle>
             </asp:TemplateField>
+            <asp:TemplateField HeaderText="Section" HeaderStyle-CssClass="header-center">
+                <ItemTemplate>
+                    <asp:Label ID="creditHourLbl" runat="server" Text='<%# Eval("sectionNo") %>'></asp:Label>
+                </ItemTemplate>
+                <ItemStyle Width="20%"></ItemStyle>
+            </asp:TemplateField>
               </Columns>
                 <RowStyle HorizontalAlign="Center" Height="30px" />
             </asp:GridView>
