@@ -29,6 +29,8 @@ namespace MINIPROJECT.Admin
             public string g_phoneNo;
             public float salary;
             public string g_address;
+            public string userType;
+            public string viewPermission;
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -64,14 +66,19 @@ namespace MINIPROJECT.Admin
             student.g_phoneNo = TextBoxGuardianPhoneNo.Text;
             student.salary = float.Parse(TextBoxSalary.Text);
             student.g_address = TextGuardianAddress.Text;
+            student.userType = "student";
+            student.viewPermission = "STUDENT";
            
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
             SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd2 = new SqlCommand();
             cmd.CommandType = CommandType.Text;
+            cmd2.CommandType = CommandType.Text;
             cmd.CommandText = "INSERT student (student_name, matricNo, phoneNo, email, student_IC, address, DOB, gender, race, nationality, guardian_name, occupation, guardian_phoneNo, salary, guardian_address) VALUES('" + student.username + "','" + student.matricNo + "','" + student.phoneNo + "','" + student.email + "','" + student.studentIc + "','" + student.address + "','" + student.dob + "','" + student.gender + "','" + student.race + "','" + student.nationality + "','" + student.guardian + "','" + student.occupation + "','" + student.g_phoneNo + "','" + student.salary + "','" + student.g_address + "')";
+            cmd2.CommandText = "INSERT user (username, password, userType, viewPermission) VALUES ('" + student.matricNo + "','" + student.studentIc + "','" + student.userType + "','" + student.viewPermission + "')";
             cmd.Connection = con;
-
+            cmd2.Connection = con;
             con.Open();           
             con.Close();
         }
