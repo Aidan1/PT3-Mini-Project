@@ -11,13 +11,27 @@ namespace MINIPROJECT.Student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            using (eCampusDataContext ctx = new eCampusDataContext())
+            {
+                var dataSource = from a in ctx.year_semesters
+                                 select new
+                                 {
+                                     a.semesterID,
+                                     a.year,
+                                     a.semester,
+                                     DisplayField = String.Format("{0}- SEMESTER {1}", a.year, a.semester)
+                                 };
+                DropDownList2.DataValueField = "semesterID";
+                DropDownList2.DataTextField = "DisplayField";
+                DropDownList2.DataSource = dataSource;
+                DropDownList2.DataBind();
+            }
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var semID = Convert.ToInt32(DropDownList2.SelectedValue);
-            
+            System.Diagnostics.Debug.WriteLine(DropDownList2.SelectedValue);
+            int semID = Convert.ToInt32(DropDownList2.SelectedValue);            
             using (eCampusDataContext ctx = new eCampusDataContext())
             {
                 var ds = from a in ctx.course_offereds

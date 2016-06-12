@@ -70,19 +70,30 @@
         }
     </style>
 
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Course Offered</h3>
-        </div>
-          <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="year" DataValueField="semesterID">
-                 <asp:ListItem Text="Choose Course Code"></asp:ListItem>                     
-               </asp:DropDownList>
-          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [year], [semester], [semesterID] FROM [year_semester]"></asp:SqlDataSource>
-         
-        <div class="panel-body">
-            
-           
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="course_offered_ID" >
+     <section class="content-header">
+      <h1>
+        Course
+        <small>Course Offer</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+        <li class="active">Course Offer</li>
+      </ol>
+    </section>
+    <section class="content" >
+        <div class="row">
+             <div class="box-body" >
+             <asp:Table runat="server" CssClass="table">
+                 <asp:TableRow>
+                     <asp:TableCell CssClass="col-md-3">
+                         <asp:DropDownList Width="100%" Height="30px" ID="DropDownList2" AppendDataBoundItems="true" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                             <asp:ListItem Text="Choose year and semester"></asp:ListItem>
+                         </asp:DropDownList>                    
+                     </asp:TableCell>
+                 </asp:TableRow>
+             </asp:Table>
+
+            <asp:GridView CssClass="table table-bordered table-hover"  ID="GridView1" runat="server" Width="100%" AutoGenerateColumns="false" DataKeyNames="course_offered_ID" >
                  <Columns>
             <asp:TemplateField HeaderText="Course Code" HeaderStyle-CssClass="header-center">
                 <ItemTemplate>
@@ -108,15 +119,10 @@
                 </ItemTemplate>
                 <ItemStyle Width="20%"></ItemStyle>
             </asp:TemplateField>
-           
-        </Columns>
-                  <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB" BorderStyle="None" ForeColor="White" VerticalAlign="Middle"></HeaderStyle>
-                <RowStyle HorizontalAlign="Center" Height="50px" />
+              </Columns>
+                <RowStyle HorizontalAlign="Center" Height="30px" />
             </asp:GridView>
             </div>
-           </div>
-
-
-
-
+         </div>
+       </section>
 </asp:Content>
