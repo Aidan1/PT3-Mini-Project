@@ -74,83 +74,101 @@
             margin-right:1px;
         }
     </style>
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Create Attendance</h3>
+    <section class="content-header">
+      <h1>
+        Attendance
+        <small>Create Attendance</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+        <li class="active">Create Attendance</li>
+      </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12 col-sm-6">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Create Attendance</h3>
+                    </div>
+                    <div class="box-body">
+                        <ajaxToolkit:ToolkitScriptManager ID="toolkit1" runat="server"></ajaxToolkit:ToolkitScriptManager>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>Course Code</td>
+                                    <td>Course ID</td>
+                                    <td>Section Course</td>
+                                    <td>Pick a Date</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-3">
+                                        <asp:DropDownList AppendDataBoundItems="true" Width="100%" Height="30px" ID="DropDownList1" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server" DataSourceID="SqlDataSource1" DataTextField="courseCode" DataValueField="courseCode">
+                                            <asp:ListItem Text="Choose Course Code"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </td>
+                                    <td class="col-md-2">
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [courseCode] FROM [course]"></asp:SqlDataSource>
+                                        <asp:DropDownList AutoPostBack="true" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="100%" Height="30px" ID="DropDownList2" runat="server">
+                                        </asp:DropDownList>
+                                    </td>
+                                    <td class="col-md-2">
+                                        <asp:DropDownList Width="100%" Height="30px" ID="DropDownList3" AutoPostBack="true" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" runat="server">
+                                        </asp:DropDownList>
+                                    </td>
+                                    <td class="col-md-2">
+                                        <asp:TextBox Width="100%" Height="30px" ID="TextBoxDateOfBirth" runat="server"></asp:TextBox>
+                                    </td>
+                                    <td class="col-md-1">
+                                        <asp:ImageButton runat="server" ID="img" ImageUrl="~/Lecturer/Icons/calendar.png" height="30px" width="30px"/>
+                                        <ajaxToolkit:CalendarExtender ID="CalendarExtender" runat="server" TargetControlID="TextBoxDateOfBirth" PopupButtonID="img" CssClass="cal_Theme1"/>
+                                    </td>
+                                    <td class="col-md-2">
+                                        <asp:Button runat="server" Text="Save" CssClass="btn btn-success btn-block" ID="createAtt" Width="100%" OnClick="createAtt_Click"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <asp:GridView ID="GridView1" CssClass="table table-bordered" AutoGenerateColumns="false" runat="server" Width="100%" DataKeyNames="matricNo" EmptyDataText="No student list">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Matric No">
+                                    <ItemTemplate>
+                                        <asp:Label ID="matricNoLbl" runat="server" Text='<%# Eval("matricNo") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <ItemStyle Width="20%"></ItemStyle>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Student Name">
+                                    <ItemTemplate>
+                                        <asp:Label ID="studentNameLbl" runat="server" Text='<%# Eval("studentName") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <ItemStyle Width="40%"></ItemStyle>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Attendance">
+                                    <ItemTemplate>
+                                        <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal" CellSpacing="10" CssClass="item-radio-margin">
+                                            <asp:ListItem Value="1">
+                                                Present
+                                            </asp:ListItem>
+                                            <asp:ListItem Value="0">
+                                                Absence
+                                            </asp:ListItem>
+                                        </asp:RadioButtonList>
+                                    </ItemTemplate>
+                                    <ItemStyle Width="20%"></ItemStyle>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Comment">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="TextBoxComment" placeholder="Comment" runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    </ItemTemplate>
+                                    <ItemStyle Width="20%"></ItemStyle>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="panel-body">
-            <ajaxToolkit:ToolkitScriptManager ID="toolkit1" runat="server"></ajaxToolkit:ToolkitScriptManager>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <td>Course Code</td>
-                        <td>Course ID</td>
-                        <td>Section Course</td>
-                        <td>Pick a Date</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-md-3">
-                            <asp:DropDownList AppendDataBoundItems="true" Width="100%" Height="30px" ID="DropDownList1" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server" DataSourceID="SqlDataSource1" DataTextField="courseCode" DataValueField="courseCode">
-                            <asp:ListItem Text="Choose Course Code"></asp:ListItem>
-                            </asp:DropDownList>
-                        </td>
-                        <td class="col-md-2">
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [courseCode] FROM [course]"></asp:SqlDataSource>
-                            <asp:DropDownList AutoPostBack="true" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="100%" Height="30px" ID="DropDownList2" runat="server">
-                            </asp:DropDownList>
-                        </td>
-                        <td class="col-md-2">
-                            <asp:DropDownList Width="100%" Height="30px" ID="DropDownList3" AutoPostBack="true" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" runat="server">
-                            </asp:DropDownList>
-                        </td>
-                        <td class="col-md-2">
-                            <asp:TextBox Width="100%" Height="30px" ID="TextBoxDateOfBirth" runat="server"></asp:TextBox>
-                        </td>
-                        <td class="col-md-2">
-                            <asp:ImageButton runat="server" ID="img" ImageUrl="~/Lecturer/Icons/calendar.png" height="30px" width="30px"/>
-                            <ajaxToolkit:CalendarExtender ID="CalendarExtender" runat="server" TargetControlID="TextBoxDateOfBirth" PopupButtonID="img" CssClass="cal_Theme1"/>
-                        </td>
-                        <td class="col-md-1">
-                            <asp:Button runat="server" Text="Save" CssClass="btn btn-success btn-block" ID="createAtt" Width="100%" OnClick="createAtt_Click"/>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <asp:GridView ID="GridView1" CssClass="table table-hover" AutoGenerateColumns="false" runat="server" Width="100%" DataKeyNames="matricNo" EmptyDataText="No student list">
-                <Columns>
-                    <asp:TemplateField HeaderText="Matric No" HeaderStyle-CssClass="header-center">
-                        <ItemTemplate>
-                            <asp:Label ID="matricNoLbl" runat="server" Text='<%# Eval("matricNo") %>'></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle Width="20%"></ItemStyle>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Student Name" HeaderStyle-CssClass="header-center">
-                        <ItemTemplate>
-                            <asp:Label ID="studentNameLbl" runat="server" Text='<%# Eval("studentName") %>'></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle Width="60%"></ItemStyle>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Attendance" HeaderStyle-CssClass="header-center">
-                        <ItemTemplate>
-                            <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal" CellSpacing="10" CssClass="item-radio-margin">
-                                <asp:ListItem Value="1">
-                                    Present
-                                </asp:ListItem>
-                                <asp:ListItem Value="0">
-                                    Absence
-                                </asp:ListItem>
-                            </asp:RadioButtonList>
-                            <asp:TextBox ID="TextBoxComment" placeholder="Comment" runat="server" Width="100%"></asp:TextBox>
-                        </ItemTemplate>
-                        <ItemStyle Width="20%"></ItemStyle>
-                    </asp:TemplateField>
-                </Columns>
-                <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB" BorderStyle="None" ForeColor="White" VerticalAlign="Middle"></HeaderStyle>
-                <RowStyle HorizontalAlign="Center" Height="50px" />
-            </asp:GridView>
-        </div>
-    </div>
+        </section>
 </asp:Content>

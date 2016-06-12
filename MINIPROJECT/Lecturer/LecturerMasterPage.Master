@@ -39,7 +39,7 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>e</b>Cam</span>
+          <span class="logo-mini"><b>Cam</b></span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>e-</b>Campus</span>
         </a>
@@ -81,17 +81,37 @@
           </div>
         </nav>
       </header>
-      <aside class="main-sidebar">
-        <section class="sidebar">
-          <ul class="sidebar-menu">
-            <li><a href="dashboard.aspx"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
-            <li><a href="attendance.aspx"><i class="fa fa-list"></i><span>Attendance</span></a></li>
-            <li><a href="createattendance.aspx"><i class="fa fa-plus-square"></i><span>Create Attendance</span></a></li>
-            <li><a href="listattendance.aspx"><i class="fa fa-list"></i><span>Attendance List</span></a></li>
-            <li><a href="grade.aspx"><i class="fa fa-check-square"></i><span>Grade</span></a></li>
-            <li><a href="listgrade.aspx"><i class="fa fa-list"></i><span>Grade List</span></a></li>
-        </section>
-      </aside>-->
+        <aside class="main-sidebar">
+            <section class="sidebar">
+              <ul class="sidebar-menu">
+                <li class="header">MAIN NAVIGATION</li>
+                <li>
+                  <a href="dashboard.aspx">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                  </a>
+                </li>
+                <li class="treeview">
+                  <a href="#">
+                    <i class="fa fa-list"></i> <span>Attendance</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="createattendance.aspx"><i class="fa fa-circle-o"></i><span>Create Attendance</span></a></li>
+                    <li><a href="listattendance.aspx"><i class="fa fa-circle-o"></i>Attendance List</a></li>
+                  </ul>
+                </li>
+                <li class="treeview">
+                  <a href="#">
+                    <i class="fa fa-list"></i> <span>Grade</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="grade.aspx"><i class="fa fa-circle-o"></i><span>Grade</span></a></li>
+                    <li><a href="listgrade.aspx"><i class="fa fa-circle-o"></i><span>Grade List</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+        </aside>
+
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
 
@@ -105,7 +125,6 @@
                 <form id="form1" runat="server">
                     <div>
                         <asp:ContentPlaceHolder ID="body" runat="server">
-        
                         </asp:ContentPlaceHolder>
                     </div>
                  </form>
