@@ -11,7 +11,7 @@
         </Columns>
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB" BorderStyle="None" ForeColor="White" VerticalAlign="Middle" Height="50px"></HeaderStyle>
+        <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB"  ForeColor="White" VerticalAlign="Middle" Height="50px"></HeaderStyle>
         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#EFF3FB"/>
         <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
