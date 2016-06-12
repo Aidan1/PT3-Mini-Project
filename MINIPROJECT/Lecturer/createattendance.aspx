@@ -69,6 +69,10 @@
         .padding{
             padding:10px;
         }
+        .item-radio-margin{
+            margin-left:10px;
+            margin-right:1px;
+        }
     </style>
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -131,17 +135,15 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Attendance" HeaderStyle-CssClass="header-center">
                         <ItemTemplate>
-                            <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
+                            <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal" CellSpacing="10" CssClass="item-radio-margin">
                                 <asp:ListItem Value="1">
                                     Present
                                 </asp:ListItem>
                                 <asp:ListItem Value="0">
                                     Absence
                                 </asp:ListItem>
-                                <asp:ListItem Value="2">
-                                    Late
-                                </asp:ListItem>
                             </asp:RadioButtonList>
+                            <asp:TextBox ID="TextBoxComment" placeholder="Comment" runat="server" Width="100%"></asp:TextBox>
                         </ItemTemplate>
                         <ItemStyle Width="20%"></ItemStyle>
                     </asp:TemplateField>
