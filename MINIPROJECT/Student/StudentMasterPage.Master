@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="StudentMasterPage.Master.cs" Inherits="MINIPROJECT.Student.AdminMasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="StudentMasterPage.Master.cs" Inherits="MINIPROJECT.Student.StudentMasterPage" %>
 
 
 <!DOCTYPE html>
@@ -55,16 +55,39 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  
+                    <%
+                        if (gender.Text.Equals("male") || gender.Text.Equals("MALE"))
+                        {
+                    %>
+                            <img src="images/male.jpg" class="user-image" alt="User Image">
+                    <%  }
+                        else
+                        {
+                    %>
+                            <img src="images/female.jpg" class="user-image" alt="User Image">
+                    <%  } %>
+
+                  <span class="hidden-xs"><asp:Label ID="student_name" runat="server" Text="Label"></asp:Label></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <asp:Label ID="gender" runat="server" Text="Label"></asp:Label> <br/>
+                    <%
+                        if (gender.Text.Equals("male") || gender.Text.Equals("MALE"))
+                        {
+                    %>
+                            <img src="images/male.jpg" class="img-circle" alt="User Image">
+                    <%  }
+                        else
+                        {
+                    %>
+                            <img src="images/female.jpg" class="img-circle" alt="User Image">
+                    <%  } %>
                     <p>
-                      Alexander Pierce - Web Developer
-                      <small>Member since Nov. 2012</small>
+                      <asp:Label ID="student_name1" runat="server" Text="Label"></asp:Label> <br/>
+                      <asp:Label ID="matricNo" runat="server" Text="Label"></asp:Label> <br/>
                     </p>
                   </li>
                   <!-- Menu Footer-->

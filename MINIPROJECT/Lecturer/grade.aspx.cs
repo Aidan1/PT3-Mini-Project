@@ -53,23 +53,31 @@ namespace MINIPROJECT.Lecturer
                 DropDownList3.DataBind();
             }
         }
-
+        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var ccode = DropDownList1.SelectedValue;
+            int cid = Convert.ToInt32(DropDownList2.SelectedValue);
+            using (eCampusDataContext ctx = new eCampusDataContext())
+            {
+                var ds = from a in ctx.student_sections
+                         join b in ctx.students on a.matricNo equals b.matricNo
+                         where a.courseCode == ccode && a.courseID == cid
+                         select new
+                         {
+                             matricNo = a.matricNo,
+                             studentName = b.student_name
+                         };
+                DropDownList4.Items.Clear();
+                DropDownList4.Items.Add("Choose Student");
+                DropDownList4.AppendDataBoundItems = true;
+                DropDownList4.DataValueField = "matricNo";
+                DropDownList4.DataTextField = "studentName";
+                DropDownList4.DataSource = ds;
+                DropDownList4.DataBind();
+            }
+        }
         protected void sumbitBtn_Click(object sender, EventArgs e)
         {
-/*            DataTable test = new DataTable();
-            int assignNo = Convert.ToInt32(assignDD.SelectedValue);
-            int quizNo = Convert.ToInt32(quizDD.SelectedValue);
-
-            for (int i = 0; i < assignNo; i++)
-            {
-                TableRow tRow = new TableRow();
-                test.Rows.Add(tRow);
-                for (int j = 0; j < 1; j++)
-                {
-                    TableCell tCell = new TableCell();
-                    tRow.Cells.Add(tCell);
-                }
-            }*/
         }
     }
 }

@@ -7,261 +7,279 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MINIPROJECT.Lecturer {
+namespace MINIPROJECT.Student {
     
     
-    public partial class grade {
+    public partial class profile {
         
         /// <summary>
-        /// DropDownList1 control.
+        /// LabelStudentName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.Label LabelStudentName;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// student_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label student_name;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// LabelMatricNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Label LabelMatricNo;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// matricNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.Label matricNo;
         
         /// <summary>
-        /// DropDownList4 control.
+        /// LabelPhoneNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.Label LabelPhoneNo;
         
         /// <summary>
-        /// a1 control.
+        /// phoneNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox a1;
+        protected global::System.Web.UI.WebControls.Label phoneNo;
         
         /// <summary>
-        /// q1 control.
+        /// LabelEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox q1;
+        protected global::System.Web.UI.WebControls.Label LabelEmail;
         
         /// <summary>
-        /// p1 control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox p1;
+        protected global::System.Web.UI.WebControls.Label email;
         
         /// <summary>
-        /// l1 control.
+        /// LabelStudentIC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox l1;
+        protected global::System.Web.UI.WebControls.Label LabelStudentIC;
         
         /// <summary>
-        /// mt control.
+        /// ic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox mt;
+        protected global::System.Web.UI.WebControls.Label ic;
         
         /// <summary>
-        /// f control.
+        /// LabelAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox f;
+        protected global::System.Web.UI.WebControls.Label LabelAddress;
         
         /// <summary>
-        /// a2 control.
+        /// address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox a2;
+        protected global::System.Web.UI.WebControls.Label address;
         
         /// <summary>
-        /// q2 control.
+        /// LabelDateOfBirth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox q2;
+        protected global::System.Web.UI.WebControls.Label LabelDateOfBirth;
         
         /// <summary>
-        /// p2 control.
+        /// dob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox p2;
+        protected global::System.Web.UI.WebControls.Label dob;
         
         /// <summary>
-        /// l2 control.
+        /// LabelGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox l2;
+        protected global::System.Web.UI.WebControls.Label LabelGender;
         
         /// <summary>
-        /// a3 control.
+        /// gender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox a3;
+        protected global::System.Web.UI.WebControls.Label gender;
         
         /// <summary>
-        /// q3 control.
+        /// LabelRace control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox q3;
+        protected global::System.Web.UI.WebControls.Label LabelRace;
         
         /// <summary>
-        /// p3 control.
+        /// race control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox p3;
+        protected global::System.Web.UI.WebControls.Label race;
         
         /// <summary>
-        /// l3 control.
+        /// LabelNationality control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox l3;
+        protected global::System.Web.UI.WebControls.Label LabelNationality;
         
         /// <summary>
-        /// a4 control.
+        /// nationality control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox a4;
+        protected global::System.Web.UI.WebControls.Label nationality;
         
         /// <summary>
-        /// q4 control.
+        /// LabelGuardianName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox q4;
+        protected global::System.Web.UI.WebControls.Label LabelGuardianName;
         
         /// <summary>
-        /// p4 control.
+        /// guardianName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox p4;
+        protected global::System.Web.UI.WebControls.Label guardianName;
         
         /// <summary>
-        /// l4 control.
+        /// LabelOccupation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox l4;
+        protected global::System.Web.UI.WebControls.Label LabelOccupation;
         
         /// <summary>
-        /// a5 control.
+        /// occupation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox a5;
+        protected global::System.Web.UI.WebControls.Label occupation;
         
         /// <summary>
-        /// q5 control.
+        /// LabelGuardianPhoneNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox q5;
+        protected global::System.Web.UI.WebControls.Label LabelGuardianPhoneNo;
         
         /// <summary>
-        /// p5 control.
+        /// guardianPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox p5;
+        protected global::System.Web.UI.WebControls.Label guardianPhone;
         
         /// <summary>
-        /// l5 control.
+        /// LabelSalary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox l5;
+        protected global::System.Web.UI.WebControls.Label LabelSalary;
         
         /// <summary>
-        /// submitMark control.
+        /// salary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submitMark;
+        protected global::System.Web.UI.WebControls.Label salary;
+        
+        /// <summary>
+        /// LabelGuardianAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelGuardianAddress;
+        
+        /// <summary>
+        /// guardianAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label guardianAddress;
     }
 }
