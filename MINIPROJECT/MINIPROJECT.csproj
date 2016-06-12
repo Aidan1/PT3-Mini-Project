@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\images\calendar.jpg" />
+    <Content Include="Admin\manage.aspx" />
     <Content Include="App_Data\e-campus.mdf" />
     <Content Include="App_Data\e-campus_log.ldf">
       <DependentUpon>e-campus.mdf</DependentUpon>
@@ -132,7 +133,7 @@
     <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="Home\login.aspx" />
+    <Content Include="dist\Home\login.aspx" />
     <Content Include="LandingPage\.DS_Store" />
     <Content Include="LandingPage\css\animate.css" />
     <Content Include="LandingPage\css\blue.css" />
@@ -182,7 +183,7 @@
     <Content Include="Admin\AdminMasterPage.Master" />
     <Content Include="sql.txt" />
     <Content Include="Student\StudentMasterPage.Master" />
-    <Content Include="Home\HomeMasterPage.Master" />
+    <Content Include="dist\Home\HomeMasterPage.Master" />
     <Content Include="LandingPage\fonts\icomoon\icomoon.ttf" />
     <Content Include="LandingPage\fonts\simple-line-icons\Simple-Line-Icons.ttf" />
     <Content Include="LandingPage\sass\bootstrap\mixins\_alerts.scss" />
@@ -294,6 +295,13 @@
     <Compile Include="Admin\AdminMasterPage.Master.designer.cs">
       <DependentUpon>AdminMasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\manage.aspx.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\manage.aspx.designer.cs">
+      <DependentUpon>manage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\manageCourse.aspx.cs">
       <DependentUpon>manageCourse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,18 +336,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>eCampus.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Home\HomeMasterPage.Master.cs">
+    <Compile Include="dist\Home\HomeMasterPage.Master.cs">
       <DependentUpon>HomeMasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home\HomeMasterPage.Master.designer.cs">
+    <Compile Include="dist\Home\HomeMasterPage.Master.designer.cs">
       <DependentUpon>HomeMasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Home\login.aspx.cs">
+    <Compile Include="dist\Home\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home\login.aspx.designer.cs">
+    <Compile Include="dist\Home\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="LandingPage\landingPage.aspx.cs">
@@ -440,7 +448,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bootstrap\" />
-    <Folder Include="dist\" />
     <Folder Include="plugins\" />
   </ItemGroup>
   <ItemGroup>

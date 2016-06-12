@@ -10,6 +10,7 @@
             <li class="active">Student Grade</li>
         </ol>
     </section>
+
     <section class="content">
 	    <div class="row">
             <div class="box">
@@ -42,6 +43,8 @@
                             </tr>
                         </tbody>
                     </table>
+
+
                     <br />
                     <table class="table">
                         <thead>

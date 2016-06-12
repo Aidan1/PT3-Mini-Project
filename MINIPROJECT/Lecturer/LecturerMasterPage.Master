@@ -34,7 +34,6 @@
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
-
       <header class="main-header">
         <!-- Logo -->
         <a href="index2.html" class="logo">
@@ -95,8 +94,8 @@
                     <i class="fa fa-list"></i> <span>Attendance</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="createattendance.aspx"><i class="fa fa-circle-o"></i><span>Create Attendance</span></a></li>
-                    <li><a href="listattendance.aspx"><i class="fa fa-circle-o"></i>Attendance List</a></li>
+                    <li><a href="createattendance.aspx"><i class="fa fa-pencil"></i><span>Create Attendance</span></a></li>
+                    <li><a href="listattendance.aspx"><i class="fa fa-list-alt"></i>Attendance List</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -104,17 +103,15 @@
                     <i class="fa fa-list"></i> <span>Grade</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="grade.aspx"><i class="fa fa-circle-o"></i><span>Grade</span></a></li>
-                    <li><a href="listgrade.aspx"><i class="fa fa-circle-o"></i><span>Grade List</span></a></li>
+                    <li><a href="grade.aspx"><i class="fa fa-file-text-o"></i><span>Grade</span></a></li>
+                    <li><a href="listgrade.aspx"><i class="fa fa-list-alt"></i><span>Grade List</span></a></li>
                   </ul>
                 </li>
               </ul>
             </section>
         </aside>
-
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-
         <!-- Main content -->
         <section class="content">            
           <div class="row">
