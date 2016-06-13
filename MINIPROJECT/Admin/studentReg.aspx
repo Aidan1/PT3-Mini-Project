@@ -152,15 +152,8 @@
                              </td>
                             <td>
                                 <asp:TextBox ID="TextBoxStudentIC" runat="server" Height="23px" Width="165px"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" id="reqIC" controltovalidate="TextBoxStudentIC" errormessage="IC cannot be blank" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator
-                                    ID="regIC"
-                                    ControlToValidate="TextBoxStudentIC"
-                                    Text="IC format is invalid"
-                                    ValidationExpression="^\\d{6}\\d{2}\\d{4}$"
-                                    errormessage="Enter a valid IC" 
-                                    ForeColor="Red"
-                                    runat="server" />
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" controltovalidate="TextBoxStudentIC" validationexpression="^[0-9]{12}$" ErrorMessage="Need 12 Digit"></asp:RegularExpressionValidator>
+                                
                             </td>
                             <td>&nbsp;</td>
                         </tr>
@@ -181,7 +174,7 @@
                              <td>
                                  <div>
                                  <asp:TextBox ID="TextBoxDateOfBirth" runat="server" Height="23px" Width="165px"></asp:TextBox>
-                                 <asp:ImageButton runat="server" ID="img" ImageUrl="images/calendar.jpg" height="32px" width="38px"/>
+                                 <asp:ImageButton runat="server" ID="img" ImageUrl="/Lecturer/Icons/calendar.png" height="30px" width="30px"/>
                                  <ajaxToolkit:CalendarExtender ID="Calendar1" runat="server" TargetControlID="TextBoxDateOfBirth" PopupButtonID="img" Format="dd/MM/yyyy" CssClass= " cal_Theme1"/>                            
                                  </div> 
                             </td>
@@ -317,5 +310,6 @@
                         </tr>
                     </table> <br/>
                     <asp:Button ID="Button1" runat="server" Text="Register" Width="180px" OnClick="registerStudent" CssClass="btn btn-primary"/>
+                    <asp:Label ID="lblmsg" runat="server" Text="" CssClass="alert-warning"></asp:Label>
     </div>
 </asp:Content>
