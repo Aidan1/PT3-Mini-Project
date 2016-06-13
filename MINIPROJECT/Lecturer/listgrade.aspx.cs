@@ -18,5 +18,18 @@ namespace MINIPROJECT.Lecturer
         {
 
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

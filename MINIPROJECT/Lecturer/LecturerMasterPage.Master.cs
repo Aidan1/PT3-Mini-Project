@@ -13,7 +13,7 @@ namespace MINIPROJECT.Lecturer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string username = Session["username"].ToString();
+  /*          string username = Session["username"].ToString();
 
             SqlConnection conn = null;
             string connectionString = getConnection();
@@ -36,7 +36,7 @@ namespace MINIPROJECT.Lecturer
                 dr.Close();
             }
             conn.Close();
-            gender.Visible = false;
+            gender.Visible = false; */
         }
 
         private string getConnection()
