@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master"  AutoEventWireup="true" CodeBehind="manager.aspx.cs" Inherits="MINIPROJECT.Admin.manage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master"  AutoEventWireup="true" CodeBehind="manage.aspx.cs" Inherits="MINIPROJECT.Admin.manage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
     <section class="content-header">
         <h1>
-            Manage
+            Course
             <small>Manage Course</small>
         </h1>
         <ol class="breadcrumb">
@@ -46,22 +46,19 @@
                                         <asp:DropDownList ID="DropDownList6" runat="server" Height="33px" Width="142px">
                                         </asp:DropDownList>
                                     </td>
-                   
-                                  
                                     <td class="col-md-2">
                                         <asp:DropDownList ID="DropDownList7" runat="server" Height="30px" Width="192px">
                                         </asp:DropDownList>
                                     </td>
-
                                     <td class="col-md-2">
                                     <asp:Button ID="Button1" runat="server" Text="Add" />
                                     </td>
-
                                 </tr>
                             </tbody>
                         </table>
                 </div>
             </div>
+	        <br />
 	    </div>
     </section>
 </asp:Content>

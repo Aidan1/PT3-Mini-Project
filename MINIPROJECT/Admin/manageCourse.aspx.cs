@@ -148,6 +148,5 @@ namespace MINIPROJECT.Admin
             DropDownList3.ClearSelection();
             DropDownList4.ClearSelection();
         }
-
     }
 }
