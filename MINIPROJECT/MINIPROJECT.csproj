@@ -170,15 +170,14 @@
     <Content Include="LandingPage\js\modernizr-2.6.2.min.js" />
     <Content Include="LandingPage\js\owl.carousel.min.js" />
     <Content Include="LandingPage\landingPage.aspx" />
+    <Content Include="LandingPage\README.txt" />
     <Content Include="Lecturer\attendance.aspx" />
     <Content Include="Lecturer\createattendance.aspx" />
     <Content Include="Lecturer\dashboard.aspx" />
     <Content Include="Lecturer\grade.aspx" />
     <Content Include="Lecturer\Icons\calendar.png" />
-    <Content Include="Lecturer\LecturerMasterPage.Master" />
     <Content Include="Lecturer\listattendance.aspx" />
     <Content Include="Lecturer\listgrade.aspx" />
-    <Content Include="LandingPage\README.txt" />
     <Content Include="packages.config" />
     <Content Include="Admin\AdminMasterPage.Master" />
     <Content Include="sql.txt" />
@@ -267,6 +266,7 @@
       <LastGenOutput>eCampus.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Lecturer\LecturerMasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
