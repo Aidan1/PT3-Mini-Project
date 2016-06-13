@@ -101,8 +101,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Icon\cancel.png" />
+    <Content Include="Admin\Icon\delete1.png" />
+    <Content Include="Admin\Icon\delete2.png" />
+    <Content Include="Admin\Icon\edit.png" />
+    <Content Include="Admin\Icon\update.png" />
+    <Content Include="Admin\Icon\view.png" />
     <Content Include="Admin\images\calendar.jpg" />
-    <Content Include="Admin\manage.aspx" />
     <Content Include="App_Data\e-campus.mdf" />
     <Content Include="App_Data\e-campus_log.ldf">
       <DependentUpon>e-campus.mdf</DependentUpon>
@@ -297,13 +302,6 @@
     </Compile>
     <Compile Include="Admin\AdminMasterPage.Master.designer.cs">
       <DependentUpon>AdminMasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\manage.aspx.cs">
-      <DependentUpon>manage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\manage.aspx.designer.cs">
-      <DependentUpon>manage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\manageCourse.aspx.cs">
       <DependentUpon>manageCourse.aspx</DependentUpon>
