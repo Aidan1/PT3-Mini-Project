@@ -171,11 +171,6 @@
     <Content Include="LandingPage\js\owl.carousel.min.js" />
     <Content Include="LandingPage\landingPage.aspx" />
     <Content Include="LandingPage\README.txt" />
-    <Content Include="LandingPage\Lecturer\createattendance.aspx" />
-    <Content Include="LandingPage\Lecturer\Icons\calendar.png" />
-    <Content Include="LandingPage\Lecturer\listattendance.aspx" />
-    <Content Include="LandingPage\Lecturer\listgrade.aspx" />
-    <Content Include="LandingPage\Lecturer\dashboard.aspx" />
     <Content Include="Lecturer\attendance.aspx" />
     <Content Include="Lecturer\createattendance.aspx" />
     <Content Include="Lecturer\dashboard.aspx" />
@@ -184,7 +179,6 @@
     <Content Include="Lecturer\listattendance.aspx" />
     <Content Include="Lecturer\listgrade.aspx" />
     <Content Include="packages.config" />
-    <Content Include="LandingPage\Lecturer\LecturerMasterPage.Master" />
     <Content Include="Admin\AdminMasterPage.Master" />
     <Content Include="sql.txt" />
     <Content Include="Student\images\family.gif" />
@@ -285,8 +279,6 @@
     <Content Include="Admin\manageStudent.aspx" />
     <Content Include="Admin\manageSubject.aspx" />
     <Content Include="Admin\studentReg.aspx" />
-    <Content Include="LandingPage\Lecturer\attendance.aspx" />
-    <Content Include="LandingPage\Lecturer\grade.aspx" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Student\subjectList.aspx" />
@@ -365,55 +357,6 @@
     </Compile>
     <Compile Include="LandingPage\landingPage.aspx.designer.cs">
       <DependentUpon>landingPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\attendance.aspx.cs">
-      <DependentUpon>attendance.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\attendance.aspx.designer.cs">
-      <DependentUpon>attendance.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\createattendance.aspx.cs">
-      <DependentUpon>createattendance.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\createattendance.aspx.designer.cs">
-      <DependentUpon>createattendance.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\grade.aspx.cs">
-      <DependentUpon>grade.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\grade.aspx.designer.cs">
-      <DependentUpon>grade.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\LecturerMasterPage.Master.cs">
-      <DependentUpon>LecturerMasterPage.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\LecturerMasterPage.Master.designer.cs">
-      <DependentUpon>LecturerMasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\listattendance.aspx.cs">
-      <DependentUpon>listattendance.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\listattendance.aspx.designer.cs">
-      <DependentUpon>listattendance.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\listgrade.aspx.cs">
-      <DependentUpon>listgrade.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\listgrade.aspx.designer.cs">
-      <DependentUpon>listgrade.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\dashboard.aspx.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LandingPage\Lecturer\dashboard.aspx.designer.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Lecturer\attendance.aspx.cs">
       <DependentUpon>attendance.aspx</DependentUpon>
