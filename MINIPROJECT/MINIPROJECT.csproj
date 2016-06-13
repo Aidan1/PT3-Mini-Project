@@ -103,6 +103,7 @@
   <ItemGroup>
     <Content Include="Admin\images\calendar.jpg" />
     <Content Include="Admin\manage.aspx" />
+    <Content Include="ApplicationInsights.config" />
     <Content Include="App_Data\e-campus.mdf" />
     <Content Include="App_Data\e-campus_log.ldf">
       <DependentUpon>e-campus.mdf</DependentUpon>
@@ -175,10 +176,14 @@
     <Content Include="LandingPage\Lecturer\listattendance.aspx" />
     <Content Include="LandingPage\Lecturer\listgrade.aspx" />
     <Content Include="LandingPage\Lecturer\dashboard.aspx" />
+    <Content Include="Lecturer\attendance.aspx" />
+    <Content Include="Lecturer\createattendance.aspx" />
+    <Content Include="Lecturer\dashboard.aspx" />
+    <Content Include="Lecturer\grade.aspx" />
+    <Content Include="Lecturer\Icons\calendar.png" />
+    <Content Include="Lecturer\listattendance.aspx" />
+    <Content Include="Lecturer\listgrade.aspx" />
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="LandingPage\Lecturer\LecturerMasterPage.Master" />
     <Content Include="Admin\AdminMasterPage.Master" />
     <Content Include="sql.txt" />
@@ -267,7 +272,7 @@
       <LastGenOutput>eCampus.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebForm1.aspx" />
+    <Content Include="Lecturer\LecturerMasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -410,6 +415,55 @@
     <Compile Include="LandingPage\Lecturer\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Lecturer\attendance.aspx.cs">
+      <DependentUpon>attendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\attendance.aspx.designer.cs">
+      <DependentUpon>attendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\createattendance.aspx.cs">
+      <DependentUpon>createattendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\createattendance.aspx.designer.cs">
+      <DependentUpon>createattendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\grade.aspx.cs">
+      <DependentUpon>grade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\grade.aspx.designer.cs">
+      <DependentUpon>grade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\LecturerMasterPage.Master.cs">
+      <DependentUpon>LecturerMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\LecturerMasterPage.Master.designer.cs">
+      <DependentUpon>LecturerMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\listattendance.aspx.cs">
+      <DependentUpon>listattendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\listattendance.aspx.designer.cs">
+      <DependentUpon>listattendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\listgrade.aspx.cs">
+      <DependentUpon>listgrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\listgrade.aspx.designer.cs">
+      <DependentUpon>listgrade.aspx</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -441,12 +495,6 @@
     </Compile>
     <Compile Include="Student\timeTable.aspx.designer.cs">
       <DependentUpon>timeTable.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
