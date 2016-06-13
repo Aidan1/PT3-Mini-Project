@@ -101,6 +101,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Icon\delete1.png" />
+    <Content Include="Admin\Icon\delete2.png" />
     <Content Include="Admin\images\calendar.jpg" />
     <Content Include="Admin\manage.aspx" />
     <Content Include="App_Data\e-campus.mdf" />
