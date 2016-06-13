@@ -13,5 +13,10 @@ namespace MINIPROJECT.Admin
         {
 
         }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
