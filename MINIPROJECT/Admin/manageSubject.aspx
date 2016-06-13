@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="manageSubject.aspx.cs" Inherits="MINIPROJECT.Admin.manageSubject" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
+     <style>
+        .icon-size{
+            width:30px;
+            height:30px;
+        }
+    </style>
+
     <section class="content-header">
     <h1>
         Course
@@ -17,13 +24,9 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Course List</h3>
             </div>
-            <div class="box-body">
-
- 
-            
+            <div class="box-body">   
         <asp:GridView ID="GridView1"  CssClass="table table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="courseCode,courseID" Width="100%" DataSourceID="SqlDataSource1">
         <Columns>
-           
             <asp:BoundField DataField="courseCode" HeaderText="Course Code" ReadOnly="True" SortExpression="courseCode" HeaderStyle-CssClass="header-padding" >
 <HeaderStyle CssClass="header-padding"></HeaderStyle>
             </asp:BoundField>
@@ -31,9 +34,8 @@
             <asp:BoundField DataField="courseName" HeaderText="Course Name" SortExpression="courseName" />
             <asp:BoundField DataField="shortForm" HeaderText="Short Name" SortExpression="shortForm" />
             <asp:BoundField DataField="creditHours" HeaderText="Credit Hours" SortExpression="creditHours" />
-            <asp:CommandField ShowDeleteButton="True" DeleteImageUrl="~/Icon/rubbish.png" ButtonType="Image" />
-            <asp:CommandField ShowEditButton="True" DeleteImageUrl="~/Icon/edit.png" ButtonType="Image" />
-        
+            <asp:CommandField ShowDeleteButton="True" HeaderText="Action" ControlStyle-CssClass="icon-size" DeleteImageUrl="~/Admin/Icon/delete1.png"
+                 ShowEditButton="True" UpdateImageUrl="~/Admin/Icon/update.png" CancelImageUrl="~/Admin/Icon/cancel.png" EditImageUrl="~/Admin/Icon/edit.png" ButtonType="Image" />
         </Columns>
             <HeaderStyle BorderColor="#337AB7" VerticalAlign="Middle" Height="50px" />
             <RowStyle Height="35px"  />

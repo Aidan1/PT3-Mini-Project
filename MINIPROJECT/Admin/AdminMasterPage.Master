@@ -105,7 +105,6 @@
                   </a>
                   <ul class="treeview-menu">
                     <li><a href="manageCourse.aspx"><i class="fa fa-book"></i><span>Manage Course</span></a></li>
-                      <li><a href="manage.aspx"><i class="fa fa-book"></i><span>Manage</span></a></li>
                     <li><a href="manageSubject.aspx"><i class="fa fa-list-alt"></i>Course List</a></li>
                   </ul>
                 </li>
