@@ -78,6 +78,7 @@ namespace MINIPROJECT.Lecturer
         }
         protected void sumbitBtn_Click(object sender, EventArgs e)
         {
+
         }
     }
 }

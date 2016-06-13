@@ -7,9 +7,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace MINIPROJECT.Lecturer
+namespace MINIPROJECT.Student
 {
-    public partial class LecturerMasterPage : System.Web.UI.MasterPage
+    public partial class profile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,7 @@ namespace MINIPROJECT.Lecturer
             conn = new SqlConnection();
             conn.ConnectionString = connectionString;
 
-            SqlCommand cmd = new SqlCommand("GetLecturerProfile", conn);
+            SqlCommand cmd = new SqlCommand("GetUserProfile", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@username", username));
             conn.Open();
@@ -28,15 +28,25 @@ namespace MINIPROJECT.Lecturer
             {
                 if (dr.Read())
                 {
-                    lecturer_name.Text = dr["lecturerName"].ToString();
-                    lecturer_name1.Text = dr["lecturerName"].ToString();
+                    student_name.Text = dr["student_name"].ToString();
                     matricNo.Text = dr["matricNo"].ToString();
+                    phoneNo.Text = dr["phoneNo"].ToString();
+                    email.Text = dr["email"].ToString();
+                    ic.Text = dr["student_IC"].ToString();
+                    address.Text = dr["address"].ToString();
+                    dob.Text = dr["DOB"].ToString();
                     gender.Text = dr["gender"].ToString();
+                    race.Text = dr["race"].ToString();
+                    nationality.Text = dr["nationality"].ToString();
+                    guardianName.Text = dr["guardian_name"].ToString();
+                    occupation.Text = dr["occupation"].ToString();
+                    guardianPhone.Text = dr["guardian_phoneNo"].ToString();
+                    salary.Text = dr["salary"].ToString();
+                    guardianAddress.Text = dr["guardian_address"].ToString();                   
                 }
                 dr.Close();
             }
             conn.Close();
-            gender.Visible = false;
         }
 
         private string getConnection()
