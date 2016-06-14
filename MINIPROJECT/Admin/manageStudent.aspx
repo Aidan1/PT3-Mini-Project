@@ -1,29 +1,44 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="manageStudent.aspx.cs" Inherits="MINIPROJECT.Admin.manageStudent" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
-    <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="matricNo" DataSourceID="SqlDataSource1" Width="100%" PageSize="5">
+    <style>
+        .icon-size{
+            width:30px;
+            height:30px;
+        }
+    </style>
+        <section class="content-header">
+    <h1>
+        Student
+        <small>Manage Student</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+        <li class="active">Manage Student</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+    <div class="col-md-12 col-sm-6">
+        <div class="box">
+            <div class="box-header with-border">
+                <h3 class="box-title">Manage Student</h3>
+            </div>
+            <div class="box-body">
+    <asp:GridView ID="GridView1"  CssClass="table table-bordered table-hover" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="matricNo" DataSourceID="SqlDataSource1" Width="100%" PageSize="5">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="matricNo" HeaderText="Matric No" ReadOnly="True" SortExpression="matricNo" HeaderStyle-CssClass="header-padding">
                 <ItemStyle CssClass="header-padding" />
             </asp:BoundField>
             <asp:BoundField DataField="student_name" HeaderText="Student Name" SortExpression="student_name" />
-            <asp:CommandField ShowSelectButton="True" />
+            <asp:CommandField ShowSelectButton="True" HeaderText="Action" ControlStyle-CssClass="icon-size" SelectImageUrl="~/Admin/Icon/view.png" ButtonType="Image" />
         </Columns>
-        <EditRowStyle BackColor="#2461BF" />
-        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB"  ForeColor="White" VerticalAlign="Middle" Height="50px"></HeaderStyle>
-        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#EFF3FB"/>
-        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-        <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>  
     <br />
     <br />
-    <asp:DetailsView ID="DetailsView1" runat="server" Width="100%" AutoGenerateRows="False" DataKeyNames="matricNo" DataSourceID="SqlDataSource2" OnItemDeleted="DetailsView1_ItemDeleted" OnItemUpdated="DetailsView1_ItemUpdated" Height="50px">
-        <EditRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+    <asp:DetailsView CssClass="table table-bordered table-hover" ID="DetailsView1" runat="server" Width="100%" AutoGenerateRows="False" DataKeyNames="matricNo" DataSourceID="SqlDataSource2" OnItemDeleted="DetailsView1_ItemDeleted" OnItemUpdated="DetailsView1_ItemUpdated" Height="50px">
+        <EditRowStyle CssClass="table table-bordered table-hover"
+            />
         <Fields>
             <asp:BoundField DataField="student_name" HeaderText="Student Name" SortExpression="student_name">
                 <HeaderStyle CssClass="detail-header"/>
@@ -85,12 +100,8 @@
                 <HeaderStyle CssClass="detail-header"/>
                 <ItemStyle CssClass="detail-item"/>
             </asp:BoundField>
-            <asp:CommandField ShowEditButton="true" EditImageUrl="~/Icon/edit.png" ButtonType="Image">
-                <ItemStyle Width="52px"></ItemStyle>
-            </asp:CommandField>                
-            <asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/Icon/rubbish.png" ButtonType="Image">
-                <ItemStyle Width="52px"></ItemStyle>
-            </asp:CommandField>                
+            <asp:CommandField ShowEditButton="true" ItemStyle-HorizontalAlign="Right" EditImageUrl="~/Admin/Icon/edit.png" ShowDeleteButton="true" DeleteImageUrl="~/Admin/Icon/delete1.png" UpdateImageUrl="~/Admin/Icon/update.png" CancelImageUrl="~/Admin/Icon/cancel.png" ControlStyle-CssClass="icon-size" ButtonType="Image">
+            </asp:CommandField>
         </Fields>
         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
         <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB" BorderStyle="None" ForeColor="White" VerticalAlign="Middle" />
@@ -140,4 +151,9 @@
             <asp:Parameter Name="matricNo" Type="String" />
         </UpdateParameters>
     </asp:SqlDataSource>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
 </asp:Content>

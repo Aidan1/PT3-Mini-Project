@@ -19,6 +19,7 @@ namespace MINIPROJECT.Admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+        protected global::AjaxControlToolkit.ToolkitScriptManager toolkit1;
         
         /// <summary>
         /// LabelStudentName control.
@@ -183,22 +184,13 @@ namespace MINIPROJECT.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxStudentIC;
         
         /// <summary>
-        /// reqIC control.
+        /// RegularExpressionValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqIC;
-        
-        /// <summary>
-        /// regIC control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regIC;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
         /// LabelAddress control.
@@ -514,5 +506,14 @@ namespace MINIPROJECT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// lblmsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmsg;
     }
 }
