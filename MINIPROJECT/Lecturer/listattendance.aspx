@@ -18,7 +18,7 @@
                 <h3 class="box-title">Attendance List</h3>
             </div>
             <div class="box-body">
-                <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" runat="server" AutoGenerateColumns="false" DataKeyNames="attendanceID" EmptyDataText="No course has been added" Width="100%" HeaderStyle-HorizontalAlign="Center" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
+                <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" runat="server" AutoGenerateColumns="false" DataKeyNames="attendanceID" EmptyDataText="No course has been added" Width="100%" HeaderStyle-HorizontalAlign="Center">
                     <Columns>
                         <asp:TemplateField HeaderText="Course Code" HeaderStyle-CssClass="header-center">
                             <ItemTemplate>
@@ -44,7 +44,7 @@
                             </ItemTemplate>
                             <ItemStyle Width="20%"></ItemStyle>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Attandance" HeaderStyle-CssClass="header-center">
+                        <asp:TemplateField HeaderText="Attendance" HeaderStyle-CssClass="header-center">
                             <ItemTemplate>
                                 <asp:Label ID="attendanceLbl" runat="server" Text='<%# Eval("attendance") %>'></asp:Label>
                             </ItemTemplate>

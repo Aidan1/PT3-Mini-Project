@@ -48,15 +48,5 @@ namespace MINIPROJECT.Lecturer
                 GridView1.DataBind();
             }
         }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Server.Transfer("attendance.aspx", true);
-        }
-
-        protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
-        {
-            Server.Transfer("attendance.aspx", true);
-        }
     }
 }
