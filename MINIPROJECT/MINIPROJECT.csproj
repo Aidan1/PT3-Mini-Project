@@ -177,6 +177,8 @@
     <Content Include="LandingPage\README.txt" />
     <Content Include="Lecturer\createattendance.aspx" />
     <Content Include="Lecturer\Icons\calendar.png" />
+    <Content Include="Lecturer\images\female.jpg" />
+    <Content Include="Lecturer\images\male.jpg" />
     <Content Include="Lecturer\listattendance.aspx" />
     <Content Include="Lecturer\listgrade.aspx" />
     <Content Include="Lecturer\dashboard.aspx" />
