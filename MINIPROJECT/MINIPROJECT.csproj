@@ -188,6 +188,7 @@
     <Content Include="Student\images\female.jpg" />
     <Content Include="Student\images\images.jpg" />
     <Content Include="Student\images\male.jpg" />
+    <Content Include="Student\profile.aspx" />
     <Content Include="Student\StudentMasterPage.Master" />
     <Content Include="dist\Home\HomeMasterPage.Master" />
     <Content Include="LandingPage\fonts\icomoon\icomoon.ttf" />
@@ -415,6 +416,13 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student\StudentMasterPage.Master.cs">
       <DependentUpon>StudentMasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
