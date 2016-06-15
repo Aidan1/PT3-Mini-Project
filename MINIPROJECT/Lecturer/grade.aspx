@@ -64,110 +64,118 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="a_p" runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="q_p" runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="p_p" runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="l_p" runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="mt_p" runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" Height="30px"></asp:TextBox>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:TextBox ID="a1" CssClass="form-control" placeholder=" Assignment 1 " runat="server" Width="100%" Height="30px"></asp:TextBox>
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="q1" CssClass="form-control" placeholder=" Quiz 1 " runat="server" Width="100%" Height="30px"></asp:TextBox>
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="p1" CssClass="form-control" placeholder=" Project 1 " runat="server" Width="100%" Height="30px"></asp:TextBox>
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="l1" CssClass="form-control" placeholder=" Lab 1 " runat="server" Width="100%" Height="30px"></asp:TextBox>
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="mt" CssClass="form-control" placeholder=" Mid Term " runat="server" Width="100%" Height="30px"></asp:TextBox>
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="f" CssClass="form-control" placeholder=" Final " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="f_p" runat="server" CssClass="form-control" placeholder="Percentage" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="a2" CssClass="form-control" placeholder=" Assignment 2 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="a1" CssClass="form-control" placeholder=" Assignment 1 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="q2" CssClass="form-control" placeholder=" Quiz 2 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="q1" CssClass="form-control" placeholder=" Quiz 1 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="p2" CssClass="form-control" placeholder=" Project 2 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="p1" CssClass="form-control" placeholder=" Project 1 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="l2" CssClass="form-control" placeholder=" Lab 2 " runat="server" Width="100%" Height="30px"></asp:TextBox>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:TextBox ID="a3" CssClass="form-control" placeholder=" Assignment 3 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="l1" CssClass="form-control" placeholder=" Lab 1 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="q3" CssClass="form-control" placeholder=" Quiz 3 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="mt" CssClass="form-control" placeholder=" Mid Term " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="p3" CssClass="form-control" placeholder=" Project 3 " runat="server" Width="100%" Height="30px"></asp:TextBox>
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="l3" CssClass="form-control" placeholder=" Lab 3 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="f" CssClass="form-control" placeholder=" Final " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="a4" CssClass="form-control" placeholder=" Assignment 4 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="a2" CssClass="form-control" placeholder=" Assignment 2 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="q4" CssClass="form-control" placeholder=" Quiz 4 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="q2" CssClass="form-control" placeholder=" Quiz 2 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="p4" CssClass="form-control" placeholder=" Project 4 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="p2" CssClass="form-control" placeholder=" Project 2 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="l4" CssClass="form-control" placeholder=" Lab 4 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="l2" CssClass="form-control" placeholder=" Lab 2 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="a5" CssClass="form-control" placeholder=" Assignment 5 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="a3" CssClass="form-control" placeholder=" Assignment 3 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="q5" CssClass="form-control" placeholder=" Quiz 5 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="q3" CssClass="form-control" placeholder=" Quiz 3 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="p5" CssClass="form-control" placeholder=" Project 5 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="p3" CssClass="form-control" placeholder=" Project 3 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="l5" CssClass="form-control" placeholder=" Lab 5 " runat="server" Width="100%" Height="30px"></asp:TextBox>
+                                    <asp:TextBox ID="l3" CssClass="form-control" placeholder=" Lab 3 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="a4" CssClass="form-control" placeholder=" Assignment 4 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="q4" CssClass="form-control" placeholder=" Quiz 4 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="p4" CssClass="form-control" placeholder=" Project 4 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="l4" CssClass="form-control" placeholder=" Lab 4 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="a5" CssClass="form-control" placeholder=" Assignment 5 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="q5" CssClass="form-control" placeholder=" Quiz 5 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="p5" CssClass="form-control" placeholder=" Project 5 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="l5" CssClass="form-control" placeholder=" Lab 5 " runat="server" Width="100%" TextMode="Number" Height="30px"></asp:TextBox>
                                 </td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <h2 class="h2 header"> Total Mark </h2>
+                                </td>
+                                <td>
+                                    <h2 runat="server" id="totalMarks" class="h3 header"></h2>
+                                </td>
+                                <td>
+                                    <h2 class="h2 header"> Grade </h2>
+                                </td>
+                                <td>
+                                    <h2 runat="server" id="grades" class="h3 header"></h2>
+                                </td>
                                 <td></td>
                                 <td>
-                                    <asp:Button runat="server" ID="submitMark" Text="Save Mark" Width="100%" Height="30px" CssClass="btn btn-success" />
+                                    <asp:Button runat="server" ID="submitMark" OnClick="sumbitBtn_Click" Text="Save Mark" Width="100%" Height="30px" CssClass="btn btn-success" />
                                 </td>
                             </tr>
                         </tfoot>

@@ -43,6 +43,7 @@
       <Association Name="course_course_section" Member="course_sections" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="course_section" />
       <Association Name="course_section" Member="sections" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="section" />
       <Association Name="course_attendance" Member="attendances" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="attendance" />
+      <Association Name="course_student_score" Member="student_scores" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="student_score" />
     </Type>
   </Table>
   <Table Name="dbo.year_semester" Member="year_semesters">
@@ -84,6 +85,7 @@
       <Column Name="guardian_address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Association Name="student_student_section" Member="student_sections" ThisKey="matricNo" OtherKey="matricNo" Type="student_section" />
       <Association Name="student_attendance_status" Member="attendance_status" ThisKey="matricNo" OtherKey="matricNo" Type="attendance_status" />
+      <Association Name="student_student_score" Member="student_scores" ThisKey="matricNo" OtherKey="matricNo" Type="student_score" />
     </Type>
   </Table>
   <Table Name="dbo.course_section" Member="course_sections">
@@ -138,6 +140,32 @@
       <Column Name="comment" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Association Name="attendance_attendance_status" Member="attendance" ThisKey="attendanceID" OtherKey="attendanceID" Type="attendance" IsForeignKey="true" />
       <Association Name="student_attendance_status" Member="student" ThisKey="matricNo" OtherKey="matricNo" Type="student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.score" Member="scores">
+    <Type Name="score">
+      <Column Name="score_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="assignment" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="quiz" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="project" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="lab" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[mid-term]" Member="mid_term" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="final_exam" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="total_score" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="grade" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="score_student_score" Member="student_scores" ThisKey="score_ID" OtherKey="score_ID" Type="student_score" />
+    </Type>
+  </Table>
+  <Table Name="dbo.student_score" Member="student_scores">
+    <Type Name="student_score">
+      <Column Name="student_scoreID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="score_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="courseCode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="courseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="matricNo" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Association Name="course_student_score" Member="course" ThisKey="courseCode,courseID" OtherKey="courseCode,courseID" Type="course" IsForeignKey="true" />
+      <Association Name="student_student_score" Member="student" ThisKey="matricNo" OtherKey="matricNo" Type="student" IsForeignKey="true" />
+      <Association Name="score_student_score" Member="score" ThisKey="score_ID" OtherKey="score_ID" Type="score" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
