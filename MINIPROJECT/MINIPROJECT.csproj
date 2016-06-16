@@ -190,6 +190,7 @@
     <Content Include="Lecturer\LecturerMasterPage.Master" />
     <Content Include="Admin\AdminMasterPage.Master" />
     <Content Include="sql.txt" />
+    <Content Include="Student\Icon\plus.png" />
     <Content Include="Student\images\family.gif" />
     <Content Include="Student\images\female.jpg" />
     <Content Include="Student\images\images.jpg" />
