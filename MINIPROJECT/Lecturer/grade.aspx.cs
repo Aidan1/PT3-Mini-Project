@@ -173,58 +173,63 @@ namespace MINIPROJECT.Lecturer
                 }
             }
             
-            if(final_mark > 89)
+            if(final_mark >= 90 && final_mark <= 100)
             {
                 grades.InnerText = "A+";
             }
-            else if(final_mark > 79)
+            else if(final_mark >= 80 && final_mark <= 89)
             {
                 grades.InnerText = "A";
             }
-            else if (final_mark > 74)
+            else if (final_mark >= 75 && final_mark <= 79)
             {
                 grades.InnerText = "A-";
             }
-            else if (final_mark > 69)
+            else if (final_mark >= 70 && final_mark <= 74)
             {
                 grades.InnerText = "B+";
             }
-            else if (final_mark > 64)
+            else if (final_mark >= 65 && final_mark <= 69)
             {
                 grades.InnerText = "B";
             }
-            else if (final_mark > 59)
+            else if (final_mark >= 60 && final_mark <= 64)
             {
                 grades.InnerText = "B-";
             }
-            else if (final_mark > 54)
+            else if (final_mark >= 55 && final_mark <= 59)
             {
                 grades.InnerText = "C+";
             }
-            else if (final_mark > 49)
+            else if (final_mark >= 50 && final_mark <= 54)
             {
                 grades.InnerText = "C";
             }
-            else if (final_mark > 44)
+            else if (final_mark >= 45 && final_mark <= 49)
             {
                 grades.InnerText = "C-";
             }
-            else if (final_mark > 39)
+            else if (final_mark >= 40 && final_mark <= 44)
             {
                 grades.InnerText = "D+";
             }
-            else if (final_mark > 34)
+            else if (final_mark >= 35 && final_mark <= 39)
             {
                 grades.InnerText = "D";
             }
-            else if (final_mark > 29)
+            else if (final_mark >= 30 && final_mark <= 34)
             {
                 grades.InnerText = "D-";
             }
-            else
+            else if (final_mark >= 0 && final_mark <= 29)
             {
                 grades.InnerText = "E";
             }
+            else
+            {
+                grades.InnerText = "Error";
+            }
+
             var final_grade = grades.InnerText;
 
             storeMark(final_mark, final_grade, assestment);
