@@ -108,6 +108,7 @@
     <Content Include="Admin\Icon\update.png" />
     <Content Include="Admin\Icon\view.png" />
     <Content Include="Admin\images\calendar.jpg" />
+    <Content Include="Admin\lectureReg.aspx" />
     <Content Include="App_Data\e-campus.mdf" />
     <Content Include="App_Data\e-campus_log.ldf">
       <DependentUpon>e-campus.mdf</DependentUpon>
@@ -305,6 +306,13 @@
     </Compile>
     <Compile Include="Admin\AdminMasterPage.Master.designer.cs">
       <DependentUpon>AdminMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\lectureReg.aspx.cs">
+      <DependentUpon>lectureReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\lectureReg.aspx.designer.cs">
+      <DependentUpon>lectureReg.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\manageCourse.aspx.cs">
       <DependentUpon>manageCourse.aspx</DependentUpon>

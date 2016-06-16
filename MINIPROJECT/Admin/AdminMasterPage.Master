@@ -117,6 +117,15 @@
                     <li><a href="studentReg.aspx"><i class="fa fa-pencil-square-o"></i><span>Student Registration</span></a></li>
                   </ul>
                 </li>
+                   <li class="treeview">
+                  <a href="#">
+                    <i class="fa fa-list"></i> <span>Lecture</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="manageLecture.aspx"><i class="fa fa-users"></i><span>Manage Lecture</span></a></li>
+                    <li><a href="lectureReg.aspx"><i class="fa fa-pencil-square-o"></i><span>Lecture Registration</span></a></li>
+                  </ul>
+                </li>
               </ul>
             </section>
         </aside>
