@@ -189,6 +189,7 @@
     <Content Include="Lecturer\LecturerMasterPage.Master" />
     <Content Include="Admin\AdminMasterPage.Master" />
     <Content Include="sql.txt" />
+    <Content Include="Student\cgpa.aspx" />
     <Content Include="Student\images\family.gif" />
     <Content Include="Student\images\female.jpg" />
     <Content Include="Student\images\images.jpg" />
@@ -414,6 +415,13 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student\cgpa.aspx.cs">
+      <DependentUpon>cgpa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\cgpa.aspx.designer.cs">
+      <DependentUpon>cgpa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student\profile.aspx.cs">
       <DependentUpon>profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
