@@ -57,7 +57,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   
                     <%
-                        if (gender.Text.Equals("male") || gender.Text.Equals("MALE"))
+                        if (gender.Text.Equals("male") || gender.Text.Equals("MALE") || gender.Text.Equals("Male"))
                         {
                     %>
                             <img src="images/male.jpg" class="user-image" alt="User Image">
@@ -75,7 +75,7 @@
                   <li class="user-header">
                     <asp:Label ID="gender" runat="server" Text="Label"></asp:Label> <br/>
                     <%
-                        if (gender.Text.Equals("male") || gender.Text.Equals("MALE"))
+                        if (gender.Text.Equals("male") || gender.Text.Equals("MALE") || gender.Text.Equals("Male"))
                         {
                     %>
                             <img src="images/male.jpg" class="img-circle" alt="User Image">
@@ -117,6 +117,7 @@
             <li><a href="profile.aspx"><i class="fa fa-user"></i> <span>Profile</span></a></li>
               <li><a href="subjectList.aspx"><i class="fa fa-book"></i> <span>Course</span></a></li>
               <li><a href="subjectReg.aspx"><i class="fa fa-pencil-square-o"></i> <span>Register Course</span></a></li>
+              <li><a href="cgpa.aspx"><i class="fa fa-file-text-o"></i> <span>Result</span></a></li>
           </ul>
         </section>
         <!-- /.sidebar -->
