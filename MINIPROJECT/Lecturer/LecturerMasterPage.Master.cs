@@ -36,7 +36,7 @@ namespace MINIPROJECT.Lecturer
                 dr.Close();
             }
             conn.Close();
-            gender.Visible = false; 
+            gender.Visible = false;
         }
 
         private string getConnection()

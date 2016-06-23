@@ -67,7 +67,7 @@
                                   <asp:TextBox  CssClass="form-control" ID="TextBoxCourseID" runat="server"></asp:TextBox>
                               </td>
                               <td class="col-md-2">
-
+                                  (eg: 1123)
                                </td>
                           </tr>
                           <tr>
@@ -107,7 +107,7 @@
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <asp:Button ID="Button1" runat="server" Text="Button" OnClick="btnAdd_Click" />
+                      <asp:Button ID="Button1" class="btn btn-default" runat="server" Text="Add" OnClick="btnAdd_Click" />
                    
 <!--                      <button type="button" runat="server" class="btn btn-default" data-dismiss="modal" onclick="">Save</button>-->
                   </div>
@@ -117,41 +117,58 @@
             </div>
             </div>
             <div class="box-body">   
-        <asp:GridView ID="GridView1"  CssClass="table table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="courseCode,courseID" Width="100%">
-        <Columns>
-            <asp:BoundField DataField="courseCode" HeaderText="Course Code" ReadOnly="True" SortExpression="courseCode" HeaderStyle-CssClass="header-padding" >
-<HeaderStyle CssClass="header-padding"></HeaderStyle>
-            </asp:BoundField>
-            <asp:BoundField DataField="courseID"  HeaderText="Course ID" ReadOnly="True" SortExpression="courseID" />
-            <asp:BoundField DataField="courseName" HeaderText="Course Name" SortExpression="courseName" />
-            <asp:BoundField DataField="shortForm" HeaderText="Short Name" SortExpression="shortForm" />
-            <asp:BoundField DataField="creditHours" HeaderText="Credit Hours" SortExpression="creditHours" />
-            <asp:CommandField ShowDeleteButton="True" HeaderText="Action" ControlStyle-CssClass="icon-size" DeleteImageUrl="~/Admin/Icon/delete1.png"
-                 ShowEditButton="True" UpdateImageUrl="~/Admin/Icon/update.png" CancelImageUrl="~/Admin/Icon/cancel.png" EditImageUrl="~/Admin/Icon/edit.png" ButtonType="Image" />
-        </Columns>
-            <HeaderStyle BorderColor="#337AB7" VerticalAlign="Middle" Height="50px" />
-            <RowStyle Height="35px"  />
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [course] WHERE [courseCode] = @courseCode AND [courseID] = @courseID" InsertCommand="INSERT INTO [course] ([courseCode], [courseID], [courseName], [shortForm], [creditHours]) VALUES (@courseCode, @courseID, @courseName, @shortForm, @creditHours)" SelectCommand="SELECT * FROM [course]" UpdateCommand="UPDATE [course] SET [courseName] = @courseName, [shortForm] = @shortForm, [creditHours] = @creditHours WHERE [courseCode] = @courseCode AND [courseID] = @courseID">
-        <DeleteParameters>
-            <asp:Parameter Name="courseCode" Type="String" />
-            <asp:Parameter Name="courseID" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="courseCode" Type="String" />
-            <asp:Parameter Name="courseID" Type="Int32" />
-            <asp:Parameter Name="courseName" Type="String" />
-            <asp:Parameter Name="shortForm" Type="String" />
-            <asp:Parameter Name="creditHours" Type="Int32" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="courseName" Type="String" />
-            <asp:Parameter Name="shortForm" Type="String" />
-            <asp:Parameter Name="creditHours" Type="Int32" />
-            <asp:Parameter Name="courseCode" Type="String" />
-            <asp:Parameter Name="courseID" Type="Int32" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
+      <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" OnRowEditing="GridView1_RowEditing" runat="server" AutoGenerateColumns="False" DataKeyNames="courseCode,courseID" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit"
+                             EmptyDataText="No course has been added" Width="100%" HeaderStyle-HorizontalAlign="Center" BorderColor="White"> 
+                            <Columns>
+                                <asp:TemplateField HeaderText="Course Code" >
+                                    <ItemTemplate>
+                                        <asp:Label ID="courseCodeLbl" runat="server" Text='<%# Eval("courseCode") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="courseCodeText" runat="server" Text='<%# Eval("courseCode") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemStyle Width="10%"></ItemStyle>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Course ID" >
+                                    <ItemTemplate>
+                                        <asp:Label ID="courseIDLbl" runat="server" Text='<%# Eval("courseID") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="courseIDText" runat="server" Text='<%# Eval("courseID") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemStyle Width="10%"></ItemStyle>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Course Name">
+                                    <ItemTemplate>
+                                        <asp:Label ID="courseNameLbl" runat="server" Text='<%# Eval("courseName") %>'></asp:Label>
+                                    </ItemTemplate>
+                                     <EditItemTemplate>
+                                        <asp:TextBox ID="courseNameText" runat="server" Text='<%# Eval("courseName") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemStyle Width="20%"></ItemStyle>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Short Form">
+                                    <ItemTemplate>
+                                        <asp:Label ID="shortFormLbl" runat="server" Text='<%# Eval("shortForm") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="shortFormText" runat="server" Text='<%# Eval("shortForm") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemStyle Width="20%"></ItemStyle>
+                                </asp:TemplateField>
+                                 <asp:TemplateField HeaderText="Credit Hours">
+                                    <ItemTemplate>
+                                        <asp:Label ID="creditHoursLbl" runat="server" Text='<%# Eval("creditHours") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="creditHoursText" runat="server" Text='<%# Eval("creditHours") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemStyle Width="20%"></ItemStyle>
+                                </asp:TemplateField>
+                                <asp:CommandField ControlStyle-Width="20%" HeaderText="Action" ControlStyle-CssClass="icon-size" ShowEditButton="true" EditImageUrl="~/Admin/Icon/edit.png" ShowDeleteButton="true" DeleteImageUrl="~/Admin/Icon/delete1.png" UpdateImageUrl="~/Admin/Icon/update.png" CancelImageUrl="~/Admin/Icon/cancel.png" ButtonType="Image">
+                                </asp:CommandField>
+                            </Columns>
+                        </asp:GridView>
              
        </div>
         </div>

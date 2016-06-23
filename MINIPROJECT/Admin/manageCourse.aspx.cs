@@ -148,5 +148,20 @@ namespace MINIPROJECT.Admin
             DropDownList3.ClearSelection();
             DropDownList4.ClearSelection();
         }
+
+        protected void addYear(object sender, EventArgs e)
+        {
+            using (eCampusDataContext ctx = new eCampusDataContext())
+            {
+                year_semester ys = new year_semester
+                {
+                    year = TextBoxYear.Text,
+                    semester = Convert.ToInt32(TextBoxSemester.Text)
+                };
+                ctx.year_semesters.InsertOnSubmit(ys);
+                ctx.SubmitChanges();
+            }
+            this.BindGrid();
+        }
     }
 }

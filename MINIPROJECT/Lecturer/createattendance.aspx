@@ -116,7 +116,7 @@
                                     </td>
                                     <td class="col-md-1">
                                         <asp:ImageButton runat="server" ID="img" ImageUrl="~/Lecturer/Icons/calendar.png" height="30px" width="30px"/>
-                                        <ajaxToolkit:CalendarExtender ID="CalendarExtender" runat="server" TargetControlID="TextBoxDateOfBirth" PopupButtonID="img" CssClass="cal_Theme1"/>
+                                        <ajaxToolkit:CalendarExtender ID="CalendarExtender" runat="server" TargetControlID="TextBoxDateOfBirth" PopupButtonID="img" CssClass="cal_Theme1" Format="dd-MM-yyyy"/>
                                     </td>
                                     <td class="col-md-2">
                                         <asp:Button runat="server" Text="Save" CssClass="btn btn-success btn-block" ID="createAtt" Width="100%" OnClick="createAtt_Click"/>

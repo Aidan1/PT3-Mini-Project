@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/StudentMasterPage.Master" AutoEventWireup="true" CodeBehind="subjectReg.aspx.cs" Inherits="MINIPROJECT.Student.subjectReg" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
- <section class="content-header">
+    <section class="content-header">
      <h1>
             Registration Course
             <small>This semester</small>
@@ -29,64 +29,53 @@
                         <tbody>
                            <tr>
                                 <td class="col-md-3">
-                                    <asp:DropDownList runat="server" AppendDataBoundItems="true" Width="100%" Height="30px" ID="DropDownList1" >
+                                    <asp:DropDownList runat="server" AppendDataBoundItems="True" Width="100%" Height="30px" ID="DropDownList1" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="true"  DataTextField="courseCode" DataValueField="courseCode" >
                                         <asp:ListItem Text="Choose Course Code"></asp:ListItem>
                                     </asp:DropDownList>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [courseCode] FROM [course]"></asp:SqlDataSource>
                                 </td>
-                                <td class="col-md-3">
-                                   
-                                    <asp:DropDownList Width="100%" Height="30px" ID="DropDownList2" runat="server"></asp:DropDownList>
+                                <td class="col-md-3">                                   
+                                    <asp:DropDownList Width="100%" Height="30px" ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
                                 </td>
                                 <td class="col-md-3">
                                     <asp:DropDownList Width="100%" Height="30px" ID="DropDownList3" runat="server"></asp:DropDownList>
                                 </td>
-                         
+                                <td class="col-md-2">
+                                    <asp:Button runat="server" Text="Add Course" ID="addCourse" OnClick="addCourse_Click" Width="100%" Height="30px" CssClass="btn btn-success"/>  
+                                    </td>
                             </tr>
                         </tbody>  
                          </table>
                    <br />
-                    <asp:GridView ID="GridView1" runat="server" >
+                    <asp:GridView ID="GridView1" Width="100%" CssClass="table table-bordered table-hover" AutoGenerateColumns="false" runat="server" DataKeyNames="ssID" EmptyDataText="You haven't registered course yet">
                         <Columns>
-                            <asp:TemplateField HeaderText="Course Code" HeaderStyle-CssClass="header-center">
+                            <asp:TemplateField HeaderText="Course Code">
                                 <ItemTemplate>
                                     <asp:Label ID="courseCodeLbl" runat="server" Text='<%# Eval("courseCode") %>'></asp:Label>
                                 </ItemTemplate>
-                                <EditItemTemplate>
-                                    <asp:TextBox ID="courseCodeText" runat="server" Text='<%# Eval("courseCode") %>'></asp:TextBox>
-                                </EditItemTemplate>
-                                <ItemStyle Width="10%"></ItemStyle>
+                                <ItemStyle Width="20%"></ItemStyle>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Course ID" HeaderStyle-CssClass="header-center">
+                            <asp:TemplateField HeaderText="Course ID">
                                 <ItemTemplate>
                                     <asp:Label ID="courseIDLbl" runat="server" Text='<%# Eval("courseID") %>'></asp:Label>
                                 </ItemTemplate>
-                                <EditItemTemplate>
-                                    <asp:TextBox ID="courseIDText" runat="server" Text='<%# Eval("courseID") %>'></asp:TextBox>
-                                </EditItemTemplate>
                                 <ItemStyle Width="10%"></ItemStyle>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Course Name" HeaderStyle-CssClass="header-center">
+                            <asp:TemplateField HeaderText="Course Name">
                                 <ItemTemplate>
                                     <asp:Label ID="courseNameLbl" runat="server" Text='<%# Eval("courseName") %>'></asp:Label>
                                 </ItemTemplate>
-                                <ItemStyle Width="40%"></ItemStyle>
+                                <ItemStyle Width="30%"></ItemStyle>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Lecturer" HeaderStyle-CssClass="header-center">
+                            <asp:TemplateField HeaderText="Section">
                                 <ItemTemplate>
-                                    <asp:Label ID="lecturerNameLbl" runat="server" Text='<%# Eval("lecturerName") %>'></asp:Label>
+                                    <asp:Label ID="sectionNoLbl" runat="server" Text='<%# Eval("sectionNo") %>'></asp:Label>
                                 </ItemTemplate>
-                                <EditItemTemplate>
-                                    <asp:TextBox ID="lecturerNameText" runat="server" Text='<%# Eval("lecturer_ID") %>'></asp:TextBox>
-                                </EditItemTemplate>
-                                <ItemStyle Width="20%"></ItemStyle>
+                                <ItemStyle Width="10%"></ItemStyle>
                             </asp:TemplateField>
-                            <asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/Icon/rubbish.png" ButtonType="Image">
-                                <ItemStyle Width="25px"></ItemStyle>
-                            </asp:CommandField>
-                        </Columns>
-                        <HeaderStyle BackColor="#3B8CBB" BorderColor="#3B8CBB" BorderStyle="None" ForeColor="White" VerticalAlign="Middle"></HeaderStyle>
-                        <RowStyle HorizontalAlign="Center" Height="50px" />
+                  </Columns>
                     </asp:GridView>
+                 
                     </div>
               </div>
             </div>
