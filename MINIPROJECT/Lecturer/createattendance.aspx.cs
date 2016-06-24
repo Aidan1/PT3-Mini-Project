@@ -108,8 +108,8 @@ namespace MINIPROJECT.Lecturer
             string connectionString = getConnection();
             conn = new SqlConnection();
             conn.ConnectionString = connectionString;
-
-            DateTime date = Convert.ToDateTime(TextBoxDateOfBirth.Text);
+            DateTime date = DateTime.Parse(TextBoxDateOfBirth.Text);
+            System.Diagnostics.Debug.WriteLine(TextBoxDateOfBirth.Text);
             var ccode = DropDownList1.SelectedValue;
             int cid = Convert.ToInt32(DropDownList2.SelectedValue);
             int ssid = Convert.ToInt32(DropDownList3.SelectedValue);

@@ -61,7 +61,7 @@ namespace MINIPROJECT.Student
                 GridView1.DataBind();
             }
         }
-        protected void addCourseBtn_Click(object sender, EventArgs e)
+    /*    protected void addCourseBtn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             GridViewRow gr = btn.NamingContainer as GridViewRow;
@@ -85,6 +85,6 @@ namespace MINIPROJECT.Student
             }
 
             this.BindGrid();*/
-        }
+       
     }
 }

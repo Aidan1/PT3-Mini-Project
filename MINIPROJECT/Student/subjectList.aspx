@@ -61,11 +61,7 @@
                         </ItemTemplate>
                         <ItemStyle Width="30%"></ItemStyle>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Action">
-                        <ItemTemplate>
-                            <asp:Button runat="server" ID="addCourseBtn" CssClass="btn btn-success" Text="Add" OnClick="addCourseBtn_Click"/>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+              
               </Columns>
             </asp:GridView>
             </div>

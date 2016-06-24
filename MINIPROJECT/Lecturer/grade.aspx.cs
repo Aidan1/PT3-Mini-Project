@@ -166,9 +166,10 @@ namespace MINIPROJECT.Lecturer
             {
                 total_assesment += assestment[i];
                 total_percent += percent[i];
+                System.Diagnostics.Debug.WriteLine(total_assesment);
                 if (i == 5)
                 {
-                    final_mark = Math.Round((total_assesment / total_percent) * 100, 2, MidpointRounding.AwayFromZero);
+                    final_mark = total_assesment;
                     totalMarks.InnerText = final_mark.ToString();
                 }
             }
